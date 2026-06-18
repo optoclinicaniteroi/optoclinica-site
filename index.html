@@ -1,0 +1,3041 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Optoclínica | Optometrista em Niterói</title>
+  <meta name="description" content="Optoclínica em Piratininga, Niterói/RJ. Exame de vista completo, avaliação visual binocular, retinografia, adaptação de lentes de contato. Thatiany Menezes, optometrista." />
+  <meta name="keywords" content="optometrista em Niterói, exame de vista em Niterói, avaliação visual completa, visão binocular, lentes de contato em Niterói, retinografia em Niterói, Optoclínica, Thatiany Menezes" />
+  <meta property="og:title" content="Optoclínica | Exame de Vista Premium em Niterói" />
+  <meta property="og:description" content="Seu exame de vista pode ir muito além do grau. Uma experiência visual moderna, detalhada e sem pressa em Piratininga, Niterói." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=the-seasons@300,400,700&display=swap" rel="stylesheet" />
+  <style>
+    /* ── RESET & VARIABLES ── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --green:       #7C8B66;
+      --green-dark:  #686F4E;
+      --green-deep:  #3D4530;
+      --beige-dark:  #E0D0BD;
+      --beige-light: #F1E5DE;
+      --bg:          #F1E5DE;
+      --text-dark:   #2C2C2C;
+      --text-mid:    #5C5C5C;
+      --text-light:  #9A9A8A;
+      --white:       #FFFFFF;
+      --gold:        #C4A882;
+      --font-serif:  'The Seasons', 'Cormorant Garamond', Georgia, serif;
+      --font-sans:   'Montserrat', system-ui, sans-serif;
+      --ease:        cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      --ease-in:     cubic-bezier(0.55, 0, 1, 0.45);
+      --ease-out:    cubic-bezier(0, 0.55, 0.45, 1);
+      --t:           0.45s var(--ease);
+      --t-fast:      0.22s var(--ease);
+      --radius:      12px;
+      --shadow-sm:   0 2px 16px rgba(60,70,50,0.08);
+      --shadow-md:   0 8px 40px rgba(60,70,50,0.13);
+      --shadow-lg:   0 20px 70px rgba(60,70,50,0.18);
+      --max-w:       1200px;
+    }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color: var(--text-dark);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+    /* ── UTILS ── */
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 32px; }
+    .section-label {
+      font-family: var(--font-sans);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--green);
+      display: inline-block;
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-family: var(--font-serif);
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--text-dark);
+    }
+    .section-title em { font-style: italic; color: var(--green-dark); }
+    .section-subtitle {
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.8;
+      max-width: 560px;
+    }
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+    .reveal-delay-5 { transition-delay: 0.5s; }
+    .reveal-delay-6 { transition-delay: 0.6s; }
+
+    /* ── NAVIGATION ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 24px 0;
+      transition: background var(--t), padding var(--t), box-shadow var(--t);
+    }
+    nav.scrolled {
+      background: rgba(241,229,222,0.92);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      padding: 14px 0;
+      box-shadow: 0 1px 0 rgba(124,139,102,0.12), var(--shadow-sm);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 16px 0 32px;
+    }
+    .nav-logo img {
+      height: 48px;
+      width: auto;
+      filter: brightness(0) invert(1);
+      transition: filter var(--t);
+    }
+    nav.scrolled .nav-logo img { filter: none; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+    .nav-links a {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+      position: relative;
+      transition: color var(--t-fast);
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0; height: 1px;
+      background: currentColor;
+      transition: width 0.38s var(--ease);
+      opacity: 0.6;
+    }
+    .nav-links a:hover::after { width: 65%; }
+    .nav-links a.active::after { width: 100%; opacity: 1; }
+    .nav-links a.active {
+      color: var(--white);
+      text-shadow: 0 0 22px rgba(255,255,255,0.28);
+    }
+    .nav-links a:hover { color: var(--white); }
+    nav.scrolled .nav-links a { color: var(--text-mid); }
+    nav.scrolled .nav-links a:hover { color: var(--green-dark); }
+    nav.scrolled .nav-links a.active {
+      color: var(--green-deep);
+      text-shadow: none;
+    }
+    nav.scrolled .nav-links a.active::after {
+      background: var(--green);
+      height: 1.5px;
+      opacity: 1;
+    }
+    .nav-cta {
+      background: var(--green);
+      color: var(--white) !important;
+      padding: 10px 22px;
+      border-radius: 40px;
+      font-size: 11px !important;
+      letter-spacing: 0.12em;
+      font-weight: 600 !important;
+      transition: background var(--t-fast), transform var(--t-fast) !important;
+      margin-left: 10px;
+    }
+    .nav-cta::after { display: none !important; }
+    .nav-cta::before {
+      content: '';
+      display: inline-block;
+      width: 1px;
+      height: 14px;
+      background: rgba(255,255,255,0.2);
+      position: absolute;
+      left: -14px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    nav.scrolled .nav-cta::before { background: rgba(60,70,50,0.15); }
+    .nav-cta { position: relative; }
+    .nav-cta:hover { background: var(--green-dark) !important; transform: translateY(-1px); }
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 24px; height: 1.5px;
+      background: var(--white);
+      transition: background var(--t), transform 0.35s var(--ease), opacity 0.3s var(--ease);
+      transform-origin: center;
+    }
+    nav.scrolled .nav-hamburger span { background: var(--text-dark); }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .mobile-menu {
+      /* display:none set inline on HTML — prevents any FOUC before CSS parses */
+      position: fixed;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      background: rgba(241,229,222,0.96);
+      z-index: 999;
+      /* Hidden state via visibility + pointer-events (CSS layer) */
+      visibility: hidden;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.38s var(--ease), visibility 0s 0.38s;
+    }
+    .mobile-menu.open {
+      visibility: visible;
+      opacity: 1;
+      pointer-events: auto;
+      backdrop-filter: blur(32px);
+      -webkit-backdrop-filter: blur(32px);
+      transition: opacity 0.38s var(--ease), visibility 0s;
+      animation: mobileMenuIn 0.38s var(--ease) forwards;
+    }
+    @keyframes mobileMenuIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    .mobile-menu a {
+      font-family: var(--font-serif);
+      font-size: 34px;
+      font-weight: 300;
+      color: var(--text-dark);
+      letter-spacing: 0.06em;
+      padding: 13px 0;
+      opacity: 0;
+      transition: color 0.22s;
+    }
+    .mobile-menu.open a { animation: mobileItemIn 0.5s var(--ease) forwards; }
+    .mobile-menu.open a:nth-child(2) { animation-delay: 0.06s; }
+    .mobile-menu.open a:nth-child(3) { animation-delay: 0.13s; }
+    .mobile-menu.open a:nth-child(4) { animation-delay: 0.20s; }
+    .mobile-menu.open a:nth-child(5) { animation-delay: 0.27s; }
+    .mobile-menu.open a:nth-child(6) { animation-delay: 0.34s; }
+    @keyframes mobileItemIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: none; }
+    }
+    .mobile-menu a:hover { color: var(--green-dark); }
+    .mobile-menu-cta {
+      font-family: var(--font-sans) !important;
+      font-size: 11px !important;
+      font-weight: 600 !important;
+      letter-spacing: 0.14em !important;
+      text-transform: uppercase;
+      background: var(--green);
+      color: var(--white) !important;
+      padding: 15px 40px !important;
+      border-radius: 40px;
+      margin-top: 28px;
+    }
+    .mobile-menu-cta:hover { background: var(--green-dark) !important; }
+    .mobile-close {
+      position: absolute;
+      top: 24px; right: 24px;
+      width: 44px; height: 44px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+      color: var(--text-mid);
+      cursor: pointer;
+      border-radius: 50%;
+      transition: background 0.22s, color 0.22s;
+    }
+    .mobile-close:hover { background: rgba(124,139,102,0.14); color: var(--text-dark); }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100svh;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse 50% 70% at 82% 48%, rgba(152,170,120,0.16) 0%, transparent 52%),
+        radial-gradient(ellipse 75% 95% at 72% 110%, rgba(38,47,22,0.68) 0%, transparent 55%),
+        radial-gradient(ellipse 48% 52% at 8% -8%, rgba(188,205,152,0.15) 0%, transparent 50%),
+        linear-gradient(148deg, #92a175 0%, #7C8B66 22%, #6b7857 52%, #566149 76%, #404c32 100%);
+      display: flex;
+      align-items: center;
+    }
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 48% 52% at 58% 52%, rgba(56,68,35,0.25) 0%, transparent 65%);
+      z-index: 0;
+      pointer-events: none;
+      /* Binocular depth — deepest layer (uses CSS `translate` to compose with any transforms) */
+      translate: calc(var(--depth-x, 0) * -6px) calc(var(--depth-y, 0) * -6px);
+      transition: translate 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: translate;
+    }
+    /* Foto fixa — sem resposta ao movimento do mouse; float suave via keyframe mantido */
+    #hero .hero-photo-col {
+      translate: none;
+      will-change: auto;
+    }
+    /* Binocular depth — foreground text (preserves base translateX(-10%) of .hero-content) */
+    #hero .hero-content {
+      translate: calc(var(--depth-x, 0) * -1px) calc(var(--depth-y, 0) * -1px);
+      transition: translate 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: translate;
+    }
+    /* ──────────────────────────────────────────────────────────
+       HERO — CINEMATIC REBUILD
+       Photo: absolute, OVERSIZED on the right
+       Text:  truly centered on the viewport, overlapping the photo's faded edge
+       ────────────────────────────────────────────────────────── */
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      min-height: 100svh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Photo column — absolute, large, anchored to right edge of viewport */
+    .hero-photo-col {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 62%;
+      height: 100%;
+      min-height: 100svh;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      overflow: hidden;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .hero-photo-col::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: -10%;
+      right: 0;
+      height: 95%;
+      background:
+        radial-gradient(ellipse 60% 70% at 50% 50%, rgba(148,167,118,0.24) 0%, transparent 65%),
+        radial-gradient(ellipse 30% 22% at 45% 18%, rgba(188,205,152,0.12) 0%, transparent 55%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .hero-portrait {
+      display: block;
+      position: relative;
+      z-index: 1;
+      height: 100svh;
+      max-height: 1100px;
+      width: auto;
+      flex-shrink: 0;
+      object-fit: contain;
+      object-position: bottom right;
+      /* Soft fade into the green on the left and bottom edges */
+      mask-image:
+        linear-gradient(to right, transparent 0%, rgba(0,0,0,0.3) 8%, black 22%),
+        linear-gradient(to top, transparent 0%, rgba(0,0,0,0.5) 5%, black 15%);
+      -webkit-mask-image:
+        linear-gradient(to right, transparent 0%, rgba(0,0,0,0.3) 8%, black 22%),
+        linear-gradient(to top, transparent 0%, rgba(0,0,0,0.5) 5%, black 15%);
+      mask-composite: intersect;
+      -webkit-mask-composite: source-in;
+      filter:
+        drop-shadow(-40px 0 80px rgba(18,26,8,0.55))
+        drop-shadow(-12px 0 28px rgba(18,26,8,0.32));
+      opacity: 1;
+      transform: none;
+      animation: heroPhotoFloat 9s ease-in-out 0s infinite alternate;
+    }
+
+    /* Text block — centered on the VIEWPORT, sits on top of photo's faded edge */
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 920px;
+      padding: 80px 20px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      /* Nudge slightly left of dead-center so it sits in the "negative space" zone next to the face */
+      transform: translateX(-10%);
+    }
+
+    /* Decorative pre-line ornament — draws attention before title */
+    .hero-eyebrow-line {
+      width: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(224,208,189,0.85), transparent);
+      margin-bottom: 36px;
+      opacity: 0;
+      animation: heroLineDraw 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0s forwards;
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(58px, 7.2vw, 108px);
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1.02;
+      letter-spacing: -0.028em;
+      margin-bottom: 40px;
+      text-shadow: 0 2px 40px rgba(18,26,8,0.35);
+      white-space: nowrap;
+      /* ╔══════════════════════════════════════════════════════════════════╗
+         ║ HERO ANIMATION — VERSÃO ATUAL: frase inteira com blur→foco       ║
+         ║ (refração visual cinematográfica)                                ║
+         ║                                                                  ║
+         ║ Para voltar à ANIMAÇÃO ANTERIOR (palavra por palavra):           ║
+         ║  1. Comente as 3 linhas abaixo (opacity/filter/animation)        ║
+         ║  2. Descomente o bloco ".hero-title .word — ANIMAÇÃO ANTERIOR"   ║
+         ║  3. Em .hero-sub troque animation-delay 2.6s → 2.0s              ║
+         ║  4. Em .hero-btns troque animation-delay 2.6s → 2.35s            ║
+         ╚══════════════════════════════════════════════════════════════════╝ */
+      opacity: 0;
+      filter: blur(5px);
+      animation: heroFocusIn 2.4s cubic-bezier(0.22, 1, 0.36, 1) 0s forwards;
+    }
+    .hero-title .line { white-space: nowrap; }
+    .hero-title .line {
+      display: block;
+      white-space: nowrap;
+    }
+    /* VERSÃO ATUAL: words apenas inline-block, herdam o blur→foco do título */
+    .hero-title .word {
+      display: inline-block;
+    }
+    /* ─── ANIMAÇÃO ANTERIOR (palavra por palavra) — comentada ────────────
+    .hero-title .word {
+      display: inline-block;
+      opacity: 0;
+      filter: blur(14px);
+      transform: translateY(60%);
+      animation: heroWordReveal 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      animation-delay: calc(0.55s + var(--i, 0) * 0.11s);
+    }
+    ──────────────────────────────────────────────────────────────────── */
+
+    .hero-title em {
+      font-style: italic;
+      color: #F2E2CB;
+      position: relative;
+      text-shadow:
+        0 0 24px rgba(245,230,211,0.35),
+        0 0 60px rgba(245,230,211,0.18),
+        0 2px 40px rgba(18,26,8,0.45);
+    }
+    /* Continuous luminous pulse on "muito além" — subtle attention-grabber */
+    .hero-title em::after {
+      content: '';
+      position: absolute;
+      inset: -8% -4%;
+      background: radial-gradient(ellipse 70% 90% at 50% 50%, rgba(245,230,211,0.10) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: -1;
+      opacity: 0;
+      animation: emGlow 4.5s ease-in-out 1.8s infinite;
+    }
+
+    .hero-sub {
+      font-size: 17px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.62);
+      letter-spacing: 0.04em;
+      line-height: 1.9;
+      margin-bottom: 56px;
+      max-width: 480px;
+      opacity: 0;
+      filter: blur(5px);
+      /* aparece junto com o título — mesmo efeito blur→foco */
+      animation: heroFocusIn 2.6s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards;
+    }
+    .hero-btns {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: center;
+      opacity: 0;
+      filter: blur(5px);
+      /* aparece junto com o título — mesmo efeito blur→foco */
+      animation: heroFocusIn 2.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
+    }
+
+    /* ── KEYFRAMES ── */
+    @keyframes heroFadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes heroWordReveal {
+      0%   { opacity: 0; filter: blur(14px); transform: translateY(60%); }
+      60%  { opacity: 1; filter: blur(0); }
+      100% { opacity: 1; filter: blur(0); transform: translateY(0); }
+    }
+    /* Novo: frase inteira surge desfocada (refração) e ajusta o foco gradualmente */
+    @keyframes heroFocusIn {
+      0%   { opacity: 0;    filter: blur(5px); }
+      30%  { opacity: 0.85; filter: blur(4px); }
+      70%  { opacity: 1;    filter: blur(1.2px); }
+      100% { opacity: 1;    filter: blur(0); }
+    }
+    @keyframes heroPhotoReveal {
+      from { opacity: 0; transform: translateX(60px) scale(1.04); }
+      to   { opacity: 1; transform: translateX(0) scale(1); }
+    }
+    @keyframes heroPhotoFloat {
+      from { transform: translateY(0) scale(1); }
+      to   { transform: translateY(-5px) scale(1.003); }
+    }
+    @keyframes heroLineDraw {
+      from { width: 0; opacity: 0; }
+      to   { width: 80px; opacity: 1; }
+    }
+    @keyframes emGlow {
+      0%, 100% { opacity: 0; transform: scale(0.95); }
+      50%      { opacity: 1;   transform: scale(1.05); }
+    }
+    @keyframes heroBtnRise {
+      0%   { opacity: 0; transform: translateY(28px) scale(0.94); }
+      70%  { opacity: 1; transform: translateY(-4px) scale(1.02); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    /* ── BUTTONS ── */
+    .btn-primary {
+      background: var(--beige-dark);
+      color: var(--green-deep);
+      padding: 16px 40px;
+      border-radius: 50px;
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      transition: background var(--t-fast), transform 0.32s cubic-bezier(0.34,1.56,0.64,1), box-shadow var(--t-fast);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+    .btn-primary:hover {
+      background: var(--beige-light);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.28);
+    }
+    .btn-ghost {
+      border: 1px solid rgba(255,255,255,0.28);
+      color: rgba(255,255,255,0.72);
+      padding: 16px 38px;
+      border-radius: 50px;
+      font-size: 11.5px;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      transition: border-color var(--t-fast), color var(--t-fast), transform 0.32s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .btn-ghost:hover {
+      border-color: rgba(255,255,255,0.55);
+      color: rgba(255,255,255,0.95);
+      transform: translateY(-2px);
+    }
+
+    /* ── DIFERENCIAIS ── */
+    /* ── SOBRE A CLÍNICA ── */
+    #clinica {
+      padding: 120px 0;
+      background: linear-gradient(180deg, var(--beige-light) 0%, var(--bg) 100%);
+    }
+    .clinica-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .clinica-text .section-title { font-size: clamp(34px, 3.5vw, 52px); margin-bottom: 24px; }
+    .clinica-text p {
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.9;
+      font-weight: 300;
+      margin-bottom: 18px;
+    }
+    .clinica-quote {
+      border-left: 2px solid var(--green);
+      padding: 16px 24px;
+      margin: 32px 0;
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-style: italic;
+      color: var(--green-dark);
+      line-height: 1.5;
+    }
+    .values-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 32px;
+    }
+    .value-pill {
+      background: rgba(124,139,102,0.1);
+      border: 1px solid rgba(124,139,102,0.2);
+      color: var(--green-dark);
+      padding: 7px 18px;
+      border-radius: 40px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+    }
+    .clinica-visual {
+      position: relative;
+    }
+    .clinica-frame {
+      width: 100%;
+      aspect-ratio: 4/5;
+      border-radius: 20px;
+      background: linear-gradient(145deg, #3D4530 0%, #2a3020 40%, #1e2318 100%);
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    .clinica-frame::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 50% at 30% 40%, rgba(124,139,102,0.25) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 60% at 75% 70%, rgba(196,168,130,0.15) 0%, transparent 55%);
+    }
+    .clinica-frame-decor {
+      position: absolute;
+      bottom: 40px;
+      left: 40px;
+      right: 40px;
+      text-align: center;
+    }
+    .clinica-frame-decor span {
+      font-family: var(--font-serif);
+      font-size: 13px;
+      font-style: italic;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.06em;
+    }
+    .clinica-circles {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      pointer-events: none;
+    }
+    .clinica-circles circle {
+      fill: none;
+      stroke: rgba(124,139,102,0.2);
+      stroke-width: 0.5;
+    }
+    .accent-tag {
+      position: absolute;
+      top: -20px; right: -20px;
+      background: var(--white);
+      border-radius: 16px;
+      padding: 20px 24px;
+      box-shadow: var(--shadow-md);
+      text-align: center;
+    }
+    .accent-tag .num {
+      font-family: var(--font-serif);
+      font-size: 36px;
+      font-weight: 400;
+      color: var(--green);
+      line-height: 1;
+    }
+    .accent-tag .label {
+      font-size: 10px;
+      color: var(--text-light);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    /* ════════════════════════════════════════════════════════
+       SOBRE A PROFISSIONAL — REFINED LIGHT OLIVE EDITORIAL
+       Boutique clinic, Pinterest-luxe, ultra clean, NO motion
+       ════════════════════════════════════════════════════════ */
+    #profissional {
+      position: relative;
+      background:
+        radial-gradient(ellipse 80% 60% at 25% 18%, rgba(241,229,222,0.18), transparent 65%),
+        radial-gradient(ellipse 70% 55% at 78% 85%, rgba(104,111,78,0.20), transparent 65%),
+        radial-gradient(ellipse 50% 40% at 50% 50%, rgba(255,255,255,0.05), transparent 70%),
+        linear-gradient(168deg, #9DA686 0%, #8C9573 50%, #7A8463 100%);
+      padding: 0;
+      overflow: hidden;
+      color: var(--white);
+      margin-top: -1px;
+    }
+    /* Subtle organic noise texture for editorial depth */
+    #profissional::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 30%, rgba(241,229,222,0.045) 1px, transparent 1.5px),
+        radial-gradient(circle at 65% 70%, rgba(241,229,222,0.04) 1px, transparent 1.5px);
+      background-size: 180px 180px, 220px 220px;
+      mix-blend-mode: overlay;
+      pointer-events: none;
+      opacity: 0.6;
+      z-index: 1;
+    }
+
+    /* ── ORGANIC TOP WAVE — sculpted Pinterest flow ── */
+    /* ╔══════════════════════════════════════════════════════════════════╗
+       ║ ORIGINAL WAVE BACKUP START — prof-wave-top (CSS antigo)          ║
+       ║ Para reverter: descomente este bloco, comente o ".org-wave"      ║
+       ║ logo abaixo, e restaure o SVG original (também marcado com       ║
+       ║ "ORIGINAL WAVE BACKUP" no HTML).                                 ║
+       ╚══════════════════════════════════════════════════════════════════╝
+    .prof-wave-top {
+      position: absolute;
+      top: -1px;
+      left: 0;
+      width: 100%;
+      height: 110px;
+      z-index: 3;
+      pointer-events: none;
+      line-height: 0;
+    }
+    .prof-wave-top svg { width: 100%; height: 100%; display: block; overflow: visible; }
+    .prof-wave-top .wave-main { fill: var(--bg); }
+    .prof-wave-top .wave-shadow {
+      fill: var(--bg);
+      opacity: 0.35;
+      filter: blur(2px);
+    }
+       ORIGINAL WAVE BACKUP END
+       ──────────────────────────────────────────────────────────────── */
+
+    /* ╔══════════════════════════════════════════════════════════════════╗
+       ║ ORGANIC SECTION WAVES — Refined editorial transitions (NOVO)     ║
+       ║ Padrão: cada wave fica no TOPO da próxima seção, com fill na     ║
+       ║ cor da seção anterior. Alturas entre 50–95px (premium boutique). ║
+       ║ Para reverter qualquer wave: comente o HTML correspondente e,    ║
+       ║ se for o prof-wave-top, descomente o bloco "ORIGINAL WAVE BACKUP"║
+       ║ acima.                                                            ║
+       ╚══════════════════════════════════════════════════════════════════╝ */
+    .org-wave {
+      position: absolute;
+      top: -1px;
+      left: 0;
+      width: 100%;
+      z-index: 1; /* atrás do conteúdo (que tem z-index:1+), só acima do fundo */
+      pointer-events: none;
+      line-height: 0;
+    }
+    .org-wave svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+      overflow: visible;
+    }
+    /* Hero (dark olive) → Exp-completa (beige) — quase reta, ondulação levíssima */
+    .org-wave--hero-exp { height: 38px; }
+    .org-wave--hero-exp path { fill: #404c32; }
+    /* Exp-completa (beige) → Profissional (olive) — refinada e baixa */
+    .org-wave--exp-prof { height: 52px; }
+    .org-wave--exp-prof .wave-main { fill: var(--bg); }
+    .org-wave--exp-prof .wave-shadow {
+      fill: var(--bg);
+      opacity: 0.18;
+      filter: blur(1.2px);
+    }
+    /* Profissional (olive) → Depoimentos (beige) — verde descendo suave */
+    .org-wave--prof-dep { height: 46px; }
+    .org-wave--prof-dep path { fill: #7A8463; }
+    /* Depoimentos (beige) → FAQ (beige-sage) — quase imperceptível */
+    .org-wave--dep-faq { height: 30px; }
+    .org-wave--dep-faq path { fill: #EBDBC8; }
+
+    /* Padding-top extra de segurança: nunca encosta no conteúdo */
+    #exp-completa { padding-top: 130px; }
+    #depoimentos  { padding-top: 110px; }
+    #faq          { padding-top: 96px; }
+
+    /* Responsivo: encolhe alturas em telas pequenas, mantém proporção */
+    @media (max-width: 768px) {
+      .org-wave--hero-exp { height: 26px; }
+      .org-wave--exp-prof { height: 36px; }
+      .org-wave--prof-dep { height: 32px; }
+      .org-wave--dep-faq { height: 22px; }
+      #exp-completa { padding-top: 92px; }
+      #depoimentos  { padding-top: 82px; }
+      #faq          { padding-top: 70px; }
+    }
+
+    /* ── BIO WRAPPER ── */
+    .prof-bio {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* Organic background blobs — STATIC, refined atmosphere */
+    .prof-blob {
+      position: absolute;
+      filter: blur(70px);
+      pointer-events: none;
+      z-index: 2;
+    }
+    .prof-blob.b1 {
+      width: 620px; height: 460px; top: 8%; left: -12%;
+      background: radial-gradient(ellipse, rgba(241,229,222,0.26), transparent 65%);
+      opacity: 0.45;
+      border-radius: 60% 40% 55% 45% / 55% 45% 60% 40%;
+    }
+    .prof-blob.b2 {
+      width: 680px; height: 540px; bottom: 4%; right: -14%;
+      background: radial-gradient(ellipse, rgba(224,208,189,0.28), transparent 65%);
+      opacity: 0.4;
+      border-radius: 55% 45% 40% 60% / 50% 60% 40% 50%;
+    }
+    .prof-blob.b3 {
+      width: 420px; height: 360px; top: 48%; left: 38%;
+      background: radial-gradient(ellipse, rgba(255,255,255,0.14), transparent 60%);
+      opacity: 0.3;
+      border-radius: 50% 50% 45% 55% / 60% 40% 55% 45%;
+    }
+
+    /* Inner content grid — compact vertical, photo with more room */
+    .prof-inner {
+      position: relative;
+      z-index: 4;
+      padding: 14px 60px 14px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      max-width: 1380px;
+      margin: 0 auto;
+    }
+
+    /* ── TEXT COLUMN ── */
+    .prof-text { position: relative; padding-top: 20px; }
+
+    /* Pill eyebrow — high contrast, premium */
+    .prof-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      color: var(--white);
+      padding: 10px 24px;
+      background: rgba(241,229,222,0.16);
+      border: 1px solid rgba(241,229,222,0.32);
+      border-radius: 100px;
+      margin-bottom: 28px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    .prof-eyebrow-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--beige-light);
+    }
+
+    /* Name — unified white, elegant, single line */
+    .prof-name {
+      font-family: var(--font-serif);
+      font-size: clamp(52px, 5.4vw, 78px);
+      font-weight: 400;
+      line-height: 1.02;
+      letter-spacing: -0.025em;
+      color: var(--white);
+      margin: 0 0 18px 0;
+      white-space: nowrap;
+      text-shadow: 0 2px 24px rgba(20,28,12,0.18);
+    }
+    .prof-name em {
+      font-style: italic;
+      color: var(--white);
+      font-weight: 400;
+    }
+
+    /* Role — MONTSERRAT, refined modern */
+    .prof-role {
+      font-family: var(--font-sans);
+      font-size: 17.5px;
+      color: var(--beige-light);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+      line-height: 1.5;
+      font-weight: 600;
+    }
+
+    /* ── BIO OPENING LINE ── */
+    .prof-bio-opening {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      font-weight: 500;
+      font-style: normal;
+      color: rgba(255,255,255,0.95);
+      line-height: 1.6;
+      letter-spacing: 0.04em;
+      margin-bottom: 0;
+      padding-bottom: 22px;
+      border-bottom: 1px solid rgba(241,229,222,0.14);
+    }
+
+    /* Bio — refined, airy */
+    .prof-bio p {
+      font-size: 14.5px;
+      font-weight: 400;
+      line-height: 1.88;
+      color: rgba(255,255,255,0.82);
+      margin-bottom: 0;
+      letter-spacing: 0.012em;
+      max-width: 540px;
+    }
+
+    /* ── PHOTO COLUMN — arch backdrop, photo flush at bottom (harmonic) ── */
+    .prof-photo {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;              /* photo bottom-aligned */
+      min-height: 840px;
+    }
+
+    /* ARCH backdrop — luxurious editorial arch with depth + light gradient */
+    .prof-photo-backdrop {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 110%;
+      height: 90%;
+      background:
+        radial-gradient(ellipse 95% 45% at 50% 0%, rgba(255,255,255,0.42) 0%, transparent 58%),
+        radial-gradient(ellipse 65% 35% at 50% 28%, rgba(241,229,222,0.26) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 80% at 18% 100%, rgba(60,72,42,0.22) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 80% at 82% 100%, rgba(60,72,42,0.18) 0%, transparent 65%),
+        linear-gradient(172deg,
+          rgba(225,232,205,0.78) 0%,
+          rgba(180,190,150,0.78) 32%,
+          rgba(132,144,104,0.82) 62%,
+          rgba(90,101,68,0.88) 90%,
+          rgba(70,82,52,0.92) 100%);
+      border-radius: 320px 320px 28px 28px;
+      border: 1px solid rgba(255,255,255,0.30);
+      box-shadow:
+        inset 0 4px 0 rgba(255,255,255,0.38),
+        inset 1px 0 0 rgba(255,255,255,0.12),
+        inset -1px 0 0 rgba(255,255,255,0.08),
+        inset 0 -1px 30px rgba(60,72,42,0.25),
+        0 60px 140px rgba(20,28,12,0.46),
+        0 20px 60px rgba(20,28,12,0.22),
+        0 0 0 1px rgba(0,0,0,0.06);
+      z-index: 0;
+    }
+    /* Subtle grain texture overlay on backdrop */
+    .prof-photo-backdrop::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background-image:
+        radial-gradient(circle at 22% 28%, rgba(255,255,255,0.06) 0.5px, transparent 1px),
+        radial-gradient(circle at 68% 72%, rgba(20,28,12,0.05) 0.5px, transparent 1px);
+      background-size: 90px 90px, 120px 120px;
+      mix-blend-mode: overlay;
+      opacity: 0.7;
+      pointer-events: none;
+    }
+    /* Light halo around the photo */
+    .prof-photo-backdrop::after {
+      content: '';
+      position: absolute;
+      bottom: 4%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70%;
+      height: 60%;
+      background: radial-gradient(ellipse 60% 50% at 50% 60%, rgba(255,255,255,0.10), transparent 70%);
+      pointer-events: none;
+      mix-blend-mode: soft-light;
+    }
+
+    /* Photo — bottom flush with backdrop, larger and dominant */
+    .prof-photo-img {
+      position: relative;
+      z-index: 2;
+      max-height: 900px;
+      width: auto;
+      max-width: 105%;
+      display: block;
+      filter:
+        drop-shadow(-14px 8px 32px rgba(20,28,12,0.45))
+        drop-shadow(0 36px 70px rgba(20,28,12,0.38));
+    }
+
+    /* ── NO REVEAL ANIMATION — text appears immediately ── */
+    #profissional .prof-reveal {
+      opacity: 1;
+      transform: none;
+      filter: none;
+      transition: none;
+    }
+
+    /* ── EXPERIÊNCIA COMPLETA — ARCH CARDS ── */
+    /* ════════════════════════════════════════════════════════
+       EXP-COMPLETA — EDITORIAL CINEMATIC REBUILD
+       ════════════════════════════════════════════════════════ */
+    #exp-completa {
+      padding: 100px 0 50px;
+      background: var(--bg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Atmosphere shapes — minimal, refined, subtle depth */
+    .exp-bg-shape {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      pointer-events: none;
+      will-change: transform;
+      transition: transform 1.8s cubic-bezier(0.22, 1, 0.36, 1);
+      z-index: 0;
+      opacity: 0.55;
+    }
+    .exp-bg-shape.s1 {
+      width: 520px; height: 520px;
+      top: 6%; left: -10%;
+      background: radial-gradient(circle, rgba(124,139,102,0.22) 0%, transparent 70%);
+    }
+    .exp-bg-shape.s2 {
+      width: 600px; height: 600px;
+      top: 36%; right: -12%;
+      background: radial-gradient(circle, rgba(224,208,189,0.38) 0%, transparent 70%);
+    }
+    .exp-bg-shape.s3 {
+      width: 460px; height: 460px;
+      bottom: 8%; left: 28%;
+      background: radial-gradient(circle, rgba(104,111,78,0.14) 0%, transparent 70%);
+    }
+    .exp-bg-shape.s4 {
+      width: 380px; height: 380px;
+      top: 58%; left: 8%;
+      background: radial-gradient(circle, rgba(241,229,222,0.6) 0%, transparent 65%);
+    }
+
+    /* Section header — clean, no eyebrow */
+    .exp-completa-header {
+      text-align: center;
+      margin-bottom: 64px;
+      position: relative;
+      z-index: 2;
+    }
+    .exp-completa-header .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(48px, 5.8vw, 88px);
+      max-width: 1040px;
+      margin: 0 auto;
+      line-height: 1.04;
+      letter-spacing: -0.022em;
+      color: var(--green-deep);
+      font-weight: 400;
+    }
+    .exp-completa-header .section-title em {
+      font-style: italic;
+      color: var(--green);
+    }
+    /* Subtitle — heavier, more legible for visually-impaired audience */
+    .exp-completa-subtitle {
+      font-size: 17px;
+      color: var(--text-dark);
+      font-weight: 400;
+      letter-spacing: 0.005em;
+      line-height: 1.7;
+      margin-top: 28px;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Wider container exclusively for this section — room for larger cards */
+    #exp-completa > .container {
+      max-width: 1400px;
+    }
+
+    /* Uniform grid — 4 columns, larger cards, generous breathing room */
+    .exp-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ── FLIP CARD CORE — larger uniform cards, premium choreography ── */
+    .exp-card {
+      position: relative;
+      aspect-ratio: 0.64;     /* taller — much more room for big image */
+      perspective: 2000px;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(72px);
+      transition:
+        opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .exp-card.in-view {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: calc(var(--d, 0) * 0.09s);
+    }
+    /* Pre-flip anticipation: gentle lift + shadow grow, immediate */
+    .exp-card.in-view:hover {
+      transform: translateY(-14px);
+      transition:
+        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* Static wrapper — no continuous motion. Cards rest still until hover. */
+    .exp-card-float {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* 3D flip layer — refined, precise, premium */
+    .exp-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      /* Un-flip: silky return — easeOutQuart, no delay */
+      transition: transform 0.9s cubic-bezier(0.25, 1, 0.32, 1) 0s;
+    }
+    .exp-card:hover .exp-card-inner,
+    .exp-card.is-flipped .exp-card-inner {
+      transform: rotateY(180deg);
+      /* Flip: easeInOutQuart, slight dwell — controlled, elegant */
+      transition: transform 1.1s cubic-bezier(0.76, 0, 0.24, 1) 0.25s;
+    }
+
+    .exp-card-front,
+    .exp-card-back {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      border-radius: 240px 240px 22px 22px;
+      overflow: hidden;
+      box-shadow:
+        0 1px 3px rgba(0,0,0,0.04),
+        0 16px 48px rgba(60,70,50,0.10);
+      transition: box-shadow 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .exp-card:hover .exp-card-front,
+    .exp-card:hover .exp-card-back {
+      box-shadow:
+        0 1px 4px rgba(0,0,0,0.06),
+        0 44px 100px rgba(60,70,50,0.24);
+    }
+
+    /* ── FRONT — image takes 64%, body 36%, fixed proportions for alignment ── */
+    .exp-card-front {
+      background: var(--white);
+      display: grid;
+      grid-template-rows: 1fr auto;
+    }
+    .exp-card-front-img {
+      overflow: hidden;
+      position: relative;
+      min-height: 0;
+    }
+    .exp-card-front-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 60%, rgba(255,255,255,0.04) 100%);
+      pointer-events: none;
+    }
+    .exp-card-front-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      transition: transform 1.8s cubic-bezier(0.22, 1, 0.36, 1), filter 1s ease;
+      filter: saturate(0.96) contrast(1.02);
+    }
+    .exp-card:hover .exp-card-front-img img {
+      transform: scale(1.045);
+      filter: saturate(1.05) contrast(1.04);
+    }
+    /* Body — fixed, compact, lets image dominate the card */
+    .exp-card-front-body {
+      padding: 22px 24px 28px;
+      background: var(--white);
+      position: relative;
+      min-height: 154px;
+      display: flex;
+      flex-direction: column;
+    }
+    /* Title — uppercase Montserrat, matches site label style */
+    .exp-card-front-title {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--green-dark);
+      line-height: 1.35;
+      margin-bottom: 12px;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      white-space: normal;
+      overflow: visible;
+      text-overflow: unset;
+    }
+    /* Description — deep green (same as "Experiência visual") */
+    .exp-card-front-desc {
+      font-size: 13.5px;
+      color: var(--green-deep);
+      line-height: 1.65;
+      font-weight: 400;
+      letter-spacing: 0.003em;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    /* Hint indicator on front: small + symbol bottom-right */
+    .exp-card-front-hint {
+      position: absolute;
+      bottom: 22px;
+      right: 26px;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 1px solid rgba(124,139,102,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .exp-card-front-hint::before,
+    .exp-card-front-hint::after {
+      content: '';
+      position: absolute;
+      background: var(--green-dark);
+      transition: all 0.4s ease;
+    }
+    .exp-card-front-hint::before { width: 10px; height: 1px; }
+    .exp-card-front-hint::after  { width: 1px; height: 10px; }
+    .exp-card:hover .exp-card-front-hint {
+      background: var(--green-dark);
+      border-color: var(--green-dark);
+      transform: scale(1.08) rotate(90deg);
+    }
+    .exp-card:hover .exp-card-front-hint::before,
+    .exp-card:hover .exp-card-front-hint::after { background: var(--white); }
+
+    /* ── BACK — light beige page with brand-green title ── */
+    .exp-card-back {
+      background:
+        radial-gradient(ellipse 80% 60% at 30% 18%, rgba(255,255,255,0.55), transparent 65%),
+        radial-gradient(ellipse 70% 55% at 80% 92%, rgba(124,139,102,0.08), transparent 60%),
+        linear-gradient(165deg, var(--beige-light) 0%, var(--beige-dark) 100%);
+      color: var(--text-dark);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 52px 38px;
+      transform: rotateY(180deg);
+      text-align: left;
+    }
+    .exp-card-back-title {
+      font-family: var(--font-serif);
+      font-size: 23px;
+      font-weight: 400;
+      line-height: 1.18;
+      letter-spacing: -0.012em;
+      color: var(--green);
+      margin: 0 0 20px 0;
+      max-width: 96%;
+    }
+    .exp-card-back-text {
+      font-size: 13.5px;
+      line-height: 1.7;
+      font-weight: 400;
+      color: var(--text-mid);
+      letter-spacing: 0.005em;
+      max-width: 100%;
+      font-family: var(--font-sans);
+    }
+
+    /* ── EXPERIÊNCIA ── */
+    #experiencia {
+      padding: 120px 0;
+      background: var(--bg);
+    }
+    .exp-header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+    .exp-header .section-title { font-size: clamp(34px, 3.5vw, 52px); }
+    .exp-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      position: relative;
+    }
+    .exp-steps::before {
+      content: '';
+      position: absolute;
+      top: 32px; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(124,139,102,0.3) 20%, rgba(124,139,102,0.3) 80%, transparent);
+    }
+    .exp-step {
+      padding: 0 32px 0 0;
+      position: relative;
+    }
+    .exp-step-num {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 1px solid rgba(124,139,102,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-serif);
+      font-size: 24px;
+      color: var(--green-dark);
+      margin-bottom: 28px;
+      position: relative;
+      z-index: 1;
+      transition: background var(--t), border-color var(--t);
+      box-shadow: var(--shadow-sm);
+    }
+    .exp-step:hover .exp-step-num {
+      background: var(--green);
+      color: var(--white);
+      border-color: var(--green);
+    }
+    .exp-step h3 {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 10px;
+      color: var(--text-dark);
+    }
+    .exp-step p {
+      font-size: 13px;
+      color: var(--text-mid);
+      line-height: 1.8;
+      font-weight: 300;
+    }
+    .exp-bottom-note {
+      text-align: center;
+      margin-top: 72px;
+      padding: 40px;
+      background: linear-gradient(135deg, rgba(124,139,102,0.06), rgba(196,168,130,0.06));
+      border-radius: 20px;
+      border: 1px solid rgba(224,208,189,0.4);
+    }
+    .exp-bottom-note p {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      font-style: italic;
+      color: var(--green-dark);
+      line-height: 1.5;
+    }
+
+    /* ════════════════════════════════════════════════════════
+       DEPOIMENTOS — EDITORIAL PULL QUOTE LAYOUT
+       ════════════════════════════════════════════════════════ */
+    #depoimentos {
+      padding: 80px 0 90px;
+      background:
+        radial-gradient(ellipse 70% 50% at 18% 12%, rgba(255,255,255,0.55), transparent 60%),
+        radial-gradient(ellipse 60% 50% at 82% 88%, rgba(196,168,130,0.16), transparent 60%),
+        linear-gradient(168deg, var(--beige-light) 0%, #EBDBC8 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Oversized decorative italic quotation marks — editorial drama */
+    .dep-deco-quote {
+      position: absolute;
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(280px, 36vw, 520px);
+      line-height: 0.85;
+      color: var(--green);
+      opacity: 0.07;
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
+    }
+    .dep-deco-quote.dep-deco-1 {
+      top: 4%;
+      left: -3%;
+      transform: rotate(-8deg);
+    }
+    .dep-deco-quote.dep-deco-2 {
+      bottom: 2%;
+      right: -3%;
+      transform: rotate(8deg) scaleX(-1);
+    }
+
+    /* Header */
+    .dep-header {
+      text-align: center;
+      margin-bottom: 40px;
+      position: relative;
+      z-index: 1;
+    }
+    .dep-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--green-dark);
+      margin-bottom: 28px;
+      padding: 9px 24px;
+      background: rgba(124,139,102,0.08);
+      border: 1px solid rgba(124,139,102,0.22);
+      border-radius: 100px;
+      backdrop-filter: blur(8px);
+    }
+    .dep-eyebrow::before {
+      content: '';
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--green);
+    }
+    .dep-title {
+      font-family: var(--font-serif);
+      font-size: clamp(34px, 4.2vw, 60px);
+      font-weight: 400;
+      line-height: 1.04;
+      letter-spacing: -0.022em;
+      color: var(--green-deep);
+      margin: 0 0 28px 0;
+    }
+    .dep-title em {
+      font-style: italic;
+      color: #8B5E1A;
+      position: relative;
+      text-shadow:
+        0 0 18px rgba(139,94,26,0.38),
+        0 0 48px rgba(139,94,26,0.22),
+        0 0 90px rgba(139,94,26,0.14);
+    }
+    .dep-title em::after {
+      content: '';
+      position: absolute;
+      inset: -8% -4%;
+      background: radial-gradient(ellipse 70% 90% at 50% 50%, rgba(139,94,26,0.13) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: -1;
+      opacity: 0;
+      animation: emGlow 4.5s ease-in-out 1.5s infinite;
+    }
+
+    /* Rating panel — refined, sits above the featured quote */
+    .dep-rating-panel {
+      display: inline-flex;
+      align-items: center;
+      gap: 22px;
+      padding: 16px 32px;
+      background: var(--white);
+      border-radius: 100px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.03), 0 8px 28px rgba(60,70,50,0.08);
+      border: 1px solid rgba(224,208,189,0.5);
+    }
+    .dep-rating-stat {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .dep-rating-number {
+      font-family: var(--font-serif);
+      font-size: 28px;
+      font-weight: 500;
+      color: var(--text-dark);
+      letter-spacing: -0.015em;
+      line-height: 1;
+    }
+    .dep-rating-stars {
+      color: #F5A400;
+      font-size: 16px;
+      letter-spacing: 2.5px;
+    }
+    .dep-rating-divider {
+      width: 1px;
+      height: 22px;
+      background: rgba(60,70,50,0.15);
+    }
+    .dep-rating-label {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+    }
+    .dep-rating-google {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+    }
+
+    /* ── FEATURED PULL QUOTE — dark olive editorial centerpiece ── */
+    .dep-featured {
+      position: relative;
+      background:
+        radial-gradient(ellipse 60% 50% at 20% 15%, rgba(241,229,222,0.10), transparent 65%),
+        radial-gradient(ellipse 50% 60% at 85% 85%, rgba(196,168,130,0.14), transparent 65%),
+        linear-gradient(155deg, var(--green-dark) 0%, var(--green-deep) 60%, #2d3322 100%);
+      border-radius: 28px;
+      padding: 52px 60px 40px;
+      margin-bottom: 20px;
+      color: var(--white);
+      z-index: 1;
+      box-shadow:
+        0 1px 0 rgba(255,255,255,0.05) inset,
+        0 30px 80px rgba(40,52,28,0.28),
+        0 8px 24px rgba(40,52,28,0.14);
+      overflow: hidden;
+    }
+    /* Subtle grain texture */
+    .dep-featured::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 22% 28%, rgba(255,255,255,0.04) 0.6px, transparent 1.2px),
+        radial-gradient(circle at 68% 72%, rgba(20,28,12,0.05) 0.6px, transparent 1.2px);
+      background-size: 100px 100px, 140px 140px;
+      mix-blend-mode: overlay;
+      opacity: 0.7;
+      pointer-events: none;
+    }
+    .dep-featured-mark {
+      position: absolute;
+      top: -32px;
+      left: 56px;
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 280px;
+      line-height: 1;
+      color: rgba(241,229,222,0.09);
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
+    }
+    .dep-featured-quote {
+      position: relative;
+      z-index: 2;
+      font-family: var(--font-serif);
+      font-size: clamp(20px, 2.4vw, 34px);
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.32;
+      letter-spacing: -0.012em;
+      color: var(--white);
+      margin: 0 0 32px 0;
+      max-width: 920px;
+    }
+    .dep-featured-footer {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(241,229,222,0.18);
+    }
+    .dep-featured-author {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .dep-featured-avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(255,255,255,0.4), transparent 60%),
+        linear-gradient(135deg, var(--beige-dark) 0%, var(--gold) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-serif);
+      font-size: 19px;
+      font-weight: 500;
+      color: var(--green-deep);
+      letter-spacing: 0.02em;
+      box-shadow: 0 4px 14px rgba(20,28,12,0.25), 0 0 0 3px rgba(241,229,222,0.06);
+    }
+    .dep-featured-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .dep-featured-name {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: 0.01em;
+    }
+    .dep-featured-meta {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 400;
+      color: rgba(241,229,222,0.6);
+      letter-spacing: 0.06em;
+    }
+    .dep-featured-stars {
+      color: #F5C674;
+      font-size: 17px;
+      letter-spacing: 3px;
+      text-shadow: 0 0 18px rgba(245,198,116,0.35);
+    }
+
+    /* ── SUPPORTING GRID — 2 elegant cards ── */
+    .dep-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 36px;
+      position: relative;
+      z-index: 1;
+    }
+    .dep-card {
+      position: relative;
+      background:
+        radial-gradient(ellipse 60% 50% at 20% 15%, rgba(241,229,222,0.08), transparent 65%),
+        radial-gradient(ellipse 50% 60% at 85% 85%, rgba(196,168,130,0.12), transparent 65%),
+        linear-gradient(155deg, var(--green-dark) 0%, var(--green-deep) 60%, #2d3322 100%);
+      border-radius: 20px;
+      padding: 30px 28px 24px;
+      border: 1px solid rgba(255,255,255,0.07);
+      box-shadow: 0 1px 0 rgba(255,255,255,0.05) inset, 0 8px 32px rgba(40,52,28,0.22);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      color: var(--white);
+      transition:
+        transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    /* Decorative quote glyph in each card */
+    .dep-card::before {
+      content: '"';
+      position: absolute;
+      top: -28px;
+      right: 28px;
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 160px;
+      line-height: 1;
+      color: rgba(255,255,255,0.07);
+      pointer-events: none;
+      transition: color 0.5s ease, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .dep-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 1px 0 rgba(255,255,255,0.07) inset, 0 28px 64px rgba(40,52,28,0.32);
+    }
+    .dep-card:hover::before {
+      color: rgba(255,255,255,0.13);
+      transform: translateY(-4px) rotate(-3deg);
+    }
+    .dep-card-stars {
+      color: #F5C842;
+      font-size: 13px;
+      letter-spacing: 3px;
+      margin-bottom: 14px;
+    }
+    .dep-card-text {
+      font-family: var(--font-serif);
+      font-size: 16px;
+      font-style: italic;
+      font-weight: 400;
+      color: rgba(255,255,255,0.90);
+      line-height: 1.6;
+      margin-bottom: 22px;
+      flex: 1;
+      letter-spacing: 0.003em;
+    }
+    .dep-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255,255,255,0.12);
+    }
+    .dep-card-author {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .dep-card-name {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.02em;
+    }
+    .dep-card-date {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.55);
+      letter-spacing: 0.06em;
+    }
+    .dep-card-google {
+      width: 20px;
+      height: 20px;
+      opacity: 0.55;
+      flex-shrink: 0;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    .dep-card:hover .dep-card-google {
+      opacity: 0.9;
+      transform: scale(1.06);
+    }
+
+    /* ── CTA ── */
+    .dep-cta {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    .dep-cta-text {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 17px;
+      color: var(--text-mid);
+      margin: 0 0 22px 0;
+      letter-spacing: 0.005em;
+    }
+    .dep-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 17px 36px;
+      background: var(--white);
+      color: var(--green-deep);
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      border-radius: 100px;
+      border: 1px solid rgba(124,139,102,0.28);
+      transition:
+        background 0.35s cubic-bezier(0.25,0.46,0.45,0.94),
+        color 0.35s cubic-bezier(0.25,0.46,0.45,0.94),
+        border-color 0.35s ease,
+        transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+        box-shadow 0.35s ease;
+      box-shadow: 0 4px 16px rgba(60,70,50,0.06);
+    }
+    .dep-cta-btn:hover {
+      background: var(--green);
+      color: var(--white);
+      border-color: var(--green);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 36px rgba(124,139,102,0.32);
+    }
+    .dep-cta-btn svg {
+      transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .dep-cta-btn:hover svg {
+      transform: translateX(5px);
+    }
+
+    /* ── FAQ — Editorial premium ── */
+    #faq {
+      padding: 72px 0 80px;
+      background:
+        radial-gradient(ellipse 70% 55% at 12% 8%, rgba(124,139,102,0.18), transparent 60%),
+        radial-gradient(ellipse 65% 55% at 88% 92%, rgba(196,168,130,0.22), transparent 60%),
+        radial-gradient(ellipse 50% 40% at 50% 50%, rgba(241,229,222,0.6), transparent 70%),
+        linear-gradient(168deg, #E8DCC8 0%, #D4D5B8 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Header */
+    .faq-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 40px;
+      position: relative;
+      z-index: 1;
+    }
+    .faq-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      color: var(--green-dark);
+      margin-bottom: 20px;
+    }
+    .faq-eyebrow::before,
+    .faq-eyebrow::after {
+      content: '';
+      width: 36px;
+      height: 1px;
+      background: rgba(124,139,102,0.45);
+    }
+    .faq-title {
+      font-family: var(--font-serif);
+      font-size: clamp(34px, 4.2vw, 56px);
+      font-weight: 400;
+      line-height: 1.04;
+      letter-spacing: -0.022em;
+      color: var(--green-deep);
+      margin: 0 0 18px 0;
+    }
+    .faq-title em {
+      font-style: italic;
+      color: var(--green);
+    }
+    .faq-subtitle {
+      font-family: var(--font-sans);
+      font-size: 14.5px;
+      font-weight: 500;
+      line-height: 1.55;
+      color: var(--green-dark);
+      max-width: 520px;
+      margin: 0 auto;
+      letter-spacing: 0.01em;
+    }
+
+    /* List */
+    .faq-list {
+      max-width: 820px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Items */
+    .faq-item {
+      background: linear-gradient(135deg, rgba(255,255,255,0.85) 0%, rgba(241,229,222,0.75) 60%, rgba(196,210,170,0.55) 100%);
+      border: 1px solid rgba(124,139,102,0.28);
+      border-radius: 100px;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 2px 12px rgba(60,70,50,0.06);
+      transition:
+        background 0.45s var(--ease),
+        border-color 0.45s var(--ease),
+        border-radius 0.45s var(--ease),
+        box-shadow 0.45s var(--ease),
+        transform 0.45s var(--ease);
+    }
+    .faq-item:hover {
+      background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(241,229,222,0.85) 60%, rgba(196,210,170,0.70) 100%);
+      border-color: rgba(124,139,102,0.42);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(60,70,50,0.10);
+    }
+    .faq-item.is-open {
+      background: linear-gradient(135deg, rgba(255,255,255,0.97) 0%, rgba(241,229,222,0.92) 50%, rgba(196,210,170,0.78) 100%);
+      border-color: var(--green);
+      border-radius: 24px;
+      box-shadow: 0 8px 32px rgba(60,70,50,0.12);
+    }
+    .faq-q {
+      width: 100%;
+      text-align: left;
+      padding: 14px 20px 14px 12px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: var(--font-sans);
+      font-size: 14.5px;
+      font-weight: 600;
+      color: var(--green-deep);
+      transition: color var(--t-fast);
+      letter-spacing: 0.005em;
+    }
+    .faq-q:hover { color: var(--green-dark); }
+    .faq-q-icon {
+      flex-shrink: 0;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(124,139,102,0.22) 0%, rgba(124,139,102,0.12) 100%);
+      border: 1px solid rgba(124,139,102,0.22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--green-dark);
+      transition: background 0.35s var(--ease), color 0.35s var(--ease), border-color 0.35s var(--ease);
+    }
+    .faq-q-icon svg { width: 18px; height: 18px; }
+    .faq-item:hover .faq-q-icon {
+      background: linear-gradient(135deg, rgba(124,139,102,0.32) 0%, rgba(124,139,102,0.18) 100%);
+      border-color: rgba(124,139,102,0.36);
+    }
+    .faq-item.is-open .faq-q-icon {
+      background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+      color: var(--white);
+      border-color: var(--green-dark);
+    }
+    .faq-q-text {
+      flex: 1;
+      padding: 4px 0;
+    }
+    .faq-toggle {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid rgba(124,139,102,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--green-dark);
+      background: rgba(255,255,255,0.5);
+      transition: transform 0.45s var(--ease), background 0.35s var(--ease), color 0.35s var(--ease), border-color 0.35s var(--ease);
+    }
+    .faq-item.is-open .faq-toggle {
+      transform: rotate(45deg);
+      background: var(--green-dark);
+      color: var(--white);
+      border-color: var(--green-dark);
+    }
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.6s var(--ease), padding 0.4s var(--ease);
+    }
+    .faq-item.is-open .faq-a {
+      max-height: 800px;
+      padding: 2px 32px 22px 70px;
+    }
+    .faq-a p {
+      font-family: var(--font-sans);
+      font-size: 13.5px;
+      color: var(--text-dark);
+      line-height: 1.72;
+      font-weight: 500;
+      letter-spacing: 0.005em;
+    }
+    .faq-a p + p { margin-top: 10px; }
+
+    /* ── FOOTER — refined beige editorial ── */
+    footer {
+      background:
+        radial-gradient(ellipse 70% 50% at 12% 8%, rgba(196,168,130,0.22), transparent 60%),
+        radial-gradient(ellipse 60% 70% at 92% 100%, rgba(124,139,102,0.16), transparent 60%),
+        radial-gradient(ellipse 40% 30% at 50% 50%, rgba(255,253,248,0.35), transparent 70%),
+        linear-gradient(168deg, #EFE2D4 0%, #E6D5C0 100%);
+      padding: 110px 0 36px;
+      position: relative;
+      overflow: hidden;
+      color: var(--text-dark);
+    }
+    /* Decorative top gradient line */
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(124,139,102,0.28) 50%, transparent);
+    }
+    /* Subtle organic blob top-left for atmosphere */
+    footer::after {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 480px;
+      height: 480px;
+      background: radial-gradient(circle, rgba(124,139,102,0.10), transparent 65%);
+      border-radius: 50%;
+      filter: blur(40px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    footer .container { position: relative; z-index: 1; }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1.2fr;
+      gap: 64px;
+      margin-bottom: 64px;
+    }
+    .footer-brand img {
+      height: 56px;
+      width: auto;
+      filter: none;
+      opacity: 1;
+      margin-bottom: 22px;
+    }
+    .footer-brand p {
+      font-size: 13.5px;
+      color: var(--text-mid);
+      line-height: 1.85;
+      font-weight: 400;
+      max-width: 320px;
+      letter-spacing: 0.005em;
+    }
+    .footer-social {
+      display: flex;
+      gap: 14px;
+      margin-top: 30px;
+    }
+    .footer-social a {
+      width: 54px; height: 54px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(124,139,102,0.28);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--green-dark);
+      background: rgba(255,255,255,0.5);
+      transition: all 0.35s var(--ease);
+      box-shadow: 0 2px 12px rgba(60,70,50,0.06);
+    }
+    .footer-social a:hover {
+      border-color: var(--green);
+      color: var(--white);
+      background: var(--green);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(124,139,102,0.32);
+    }
+    .footer-social a svg {
+      width: 22px;
+      height: 22px;
+      transition: transform 0.35s var(--ease);
+    }
+    .footer-social a:hover svg { transform: scale(1.08); }
+    .footer-col h4 {
+      font-family: var(--font-sans);
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--green-dark);
+      margin-bottom: 24px;
+    }
+    .footer-col ul { display: flex; flex-direction: column; gap: 12px; }
+    .footer-col ul a {
+      font-size: 14px;
+      color: var(--text-mid);
+      transition: color var(--t-fast), letter-spacing var(--t-fast);
+      font-weight: 400;
+      position: relative;
+      display: inline-block;
+    }
+    .footer-col ul a::before {
+      content: '';
+      display: inline-block;
+      width: 0; height: 1px;
+      background: var(--green);
+      vertical-align: middle;
+      margin-right: 0;
+      transition: width 0.3s var(--ease), margin-right 0.3s var(--ease);
+    }
+    .footer-col ul a:hover { color: var(--green-dark); }
+    .footer-col ul a:hover::before { width: 12px; margin-right: 8px; }
+    .footer-contact p {
+      font-size: 13.5px;
+      color: var(--text-mid);
+      line-height: 1.78;
+      font-weight: 400;
+    }
+    .footer-contact a {
+      color: var(--text-dark);
+      transition: color var(--t-fast);
+      border-bottom: 1px solid transparent;
+    }
+    .footer-contact a:hover { color: var(--green-dark); border-bottom-color: rgba(124,139,102,0.4); }
+    .footer-bottom {
+      border-top: 1px solid rgba(124,139,102,0.18);
+      padding-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-bottom p {
+      font-size: 11.5px;
+      color: var(--text-light);
+      font-weight: 400;
+      letter-spacing: 0.05em;
+    }
+    .footer-bottom a { color: var(--green-dark); }
+    .footer-bottom a:hover { color: var(--green); }
+
+    /* ── WHATSAPP FLOAT ── */
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1200px) {
+      .exp-grid { gap: 28px; grid-template-columns: repeat(4, 1fr); }
+      .exp-card { aspect-ratio: 0.76; }
+    }
+    @media (max-width: 1024px) {
+      .hero-content { transform: translateX(-8%); }
+      .hero-photo-col { width: 60%; }
+      .hero-portrait { height: 95svh; }
+      .exp-grid { grid-template-columns: repeat(2, 1fr); gap: 22px; }
+      .exp-card { aspect-ratio: 0.85; }
+      #exp-completa { padding: 130px 0 150px; }
+      .exp-completa-header { margin-bottom: 80px; }
+      .dep-grid { grid-template-columns: 1fr; }
+      .dep-featured { padding: 64px 56px 48px; }
+      .dep-featured-mark { font-size: 200px; top: -20px; left: 32px; }
+      .dep-rating-panel { flex-wrap: wrap; gap: 16px; padding: 14px 26px; justify-content: center; }
+      .exp-steps { grid-template-columns: repeat(2, 1fr); row-gap: 48px; }
+      .exp-steps::before { display: none; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .container { padding: 0 20px; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      /* Hero — stack on mobile: text on top, photo full-width below */
+      .hero-inner {
+        flex-direction: column;
+        min-height: 100svh;
+        justify-content: flex-start;
+      }
+      .hero-content {
+        position: relative;
+        transform: none;
+        padding: 120px 24px 32px 24px;
+        max-width: 100%;
+        align-items: center;
+      }
+      .hero-photo-col {
+        position: relative;
+        width: 100%;
+        height: auto;
+        min-height: 56svh;
+        justify-content: center;
+        align-items: flex-end;
+      }
+      .hero-photo-col::before { display: none; }
+      .hero-portrait {
+        height: 56svh;
+        max-height: 460px;
+        width: 78%;
+        mask-image: linear-gradient(to top, transparent 0%, rgba(0,0,0,0.45) 8%, black 22%);
+        -webkit-mask-image: linear-gradient(to top, transparent 0%, rgba(0,0,0,0.45) 8%, black 22%);
+        mask-composite: unset;
+        -webkit-mask-composite: unset;
+        object-position: bottom center;
+        transform: translateX(0) scale(1);
+      }
+      .hero-sub { max-width: 100%; }
+      .hero-btns { justify-content: center; }
+      .hero-eyebrow-line { animation-name: heroLineDraw; }
+      .clinica-inner { grid-template-columns: 1fr; gap: 56px; }
+      .clinica-frame { max-width: 400px; margin: 0 auto; }
+      .prof-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 60px 28px 60px;
+      }
+      .prof-text { order: 2; text-align: center; }
+      .prof-text .prof-eyebrow,
+      .prof-text .prof-bio p { margin-left: auto; margin-right: auto; }
+      .prof-text .prof-eyebrow { justify-content: center; }
+      .prof-name { font-size: clamp(40px, 11vw, 64px); white-space: normal; }
+      .prof-role { display: inline-block; }
+      .prof-bio-label { text-align: left; }
+      .prof-photo { order: 1; min-height: 640px; }
+      .prof-photo-img { max-height: 660px; }
+      .exp-grid { grid-template-columns: 1fr; gap: 20px; }
+      .exp-card { aspect-ratio: 0.86; }
+      .exp-card-front,
+      .exp-card-back { border-radius: 160px 160px 18px 18px; }
+      .exp-card-back { padding: 44px 30px; }
+      .exp-steps { grid-template-columns: 1fr; }
+      .dep-grid { grid-template-columns: 1fr; }
+      .dep-featured { padding: 48px 30px 36px; border-radius: 24px; }
+      .dep-featured-mark { display: none; }
+      .dep-featured-footer { flex-direction: column; align-items: flex-start; gap: 22px; }
+      .dep-card { padding: 36px 28px 28px; }
+      .dep-card-text { font-size: 17px; }
+      .dep-title { font-size: clamp(36px, 9vw, 52px); }
+      .dep-deco-quote { font-size: 280px; opacity: 0.05; }
+      .prof-stats { gap: 24px; }
+      .footer-top { grid-template-columns: 1fr; gap: 40px; }
+      .accent-tag { top: -12px; right: 8px; }
+      .hero-title { font-size: clamp(40px, 10.5vw, 64px); }
+      /* FAQ mobile */
+      #faq { padding: 52px 0 64px; }
+      .faq-header { margin-bottom: 28px; }
+      .faq-title { font-size: clamp(28px, 8vw, 42px); }
+      .faq-subtitle { font-size: 13.5px; }
+      .faq-item { border-radius: 20px; }
+      .faq-item.is-open { border-radius: 20px; }
+      .faq-q { padding: 12px 14px 12px 10px; font-size: 13.5px; gap: 11px; }
+      .faq-q-icon { width: 36px; height: 36px; }
+      .faq-q-icon svg { width: 16px; height: 16px; }
+      .faq-toggle { width: 28px; height: 28px; font-size: 15px; }
+      .faq-item.is-open .faq-a { max-height: 1200px; padding: 2px 20px 18px 20px; }
+      .faq-a p { font-size: 13px; line-height: 1.7; }
+    }
+    @media (max-width: 480px) {
+      #hero { min-height: 100svh; }
+      .hero-portrait { width: 85%; }
+      .hero-btns { flex-direction: column; align-items: flex-start; }
+      .btn-primary, .btn-ghost { width: 100%; max-width: 280px; text-align: center; }
+      .dep-card { min-width: 280px; padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── MOBILE MENU ── -->
+<div class="mobile-menu" id="mobileMenu" style="display:none">
+  <span class="mobile-close" id="mobileClose">✕</span>
+  <a href="#exp-completa" onclick="closeMobile()">Experiência</a>
+  <a href="#profissional" onclick="closeMobile()">Profissional</a>
+  <a href="#depoimentos" onclick="closeMobile()">Depoimentos</a>
+  <a href="#faq" onclick="closeMobile()">FAQ</a>
+  <a href="https://wa.me/5521992919886" target="_blank" class="mobile-menu-cta" onclick="closeMobile()">Agendar Consulta</a>
+</div>
+
+<!-- ── NAV ── -->
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">
+      <img src="./images/logo.svg" alt="Optoclínica" />
+    </a>
+    <div class="nav-links">
+      <a href="#exp-completa">Experiência</a>
+      <a href="#profissional">Profissional</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://wa.me/5521992919886" target="_blank" class="nav-cta">Agendar Consulta</a>
+    </div>
+    <div class="nav-hamburger" id="navHamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-inner">
+
+    <!-- TEXT — centered on viewport -->
+    <div class="hero-content">
+      <span class="hero-eyebrow-line"></span>
+      <h1 class="hero-title">
+        <span class="line"><span class="word" style="--i:0">Seu</span> <span class="word" style="--i:1">exame</span> <span class="word" style="--i:2">de</span> <span class="word" style="--i:3">vista</span></span>
+        <span class="line"><span class="word" style="--i:4">pode</span> <span class="word" style="--i:5">ir</span> <em><span class="word" style="--i:6">muito</span> <span class="word" style="--i:7">além</span></em></span>
+        <span class="line"><span class="word" style="--i:8">do</span> <span class="word" style="--i:9">grau.</span></span>
+      </h1>
+      <p class="hero-sub">Uma experiência visual moderna, detalhada<br/>e cuidadosamente personalizada.</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/5521992919886" target="_blank" class="btn-primary">Agendar Consulta</a>
+        <a href="#exp-completa" class="btn-ghost">Conhecer os Serviços</a>
+      </div>
+    </div>
+
+    <!-- PHOTO — absolute, oversized, right -->
+    <div class="hero-photo-col">
+      <img
+        src="./images/foto-capa-transparente.webp"
+        alt="Thatiany Menezes — Optometrista Optoclínica Niterói"
+        class="hero-portrait"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      />
+    </div>
+
+  </div>
+</section>
+
+<!-- ── EXPERIÊNCIA COMPLETA ── -->
+<section id="exp-completa">
+  <!-- NOVO — wave: hero (oliva escuro) → exp-completa (bege) — quase reta, ultra-clean -->
+  <div class="org-wave org-wave--hero-exp" aria-hidden="true">
+    <svg viewBox="0 0 1440 65" preserveAspectRatio="none">
+      <path d="M0,0 L0,28 C 280,46 580,38 860,30 C 1080,22 1260,32 1440,26 L1440,0 Z"/>
+    </svg>
+  </div>
+  <!-- Parallax background shapes -->
+  <span class="exp-bg-shape s1" data-depth="0.04"></span>
+  <span class="exp-bg-shape s2" data-depth="0.06"></span>
+  <span class="exp-bg-shape s3" data-depth="0.03"></span>
+  <span class="exp-bg-shape s4" data-depth="0.05"></span>
+
+  <div class="container">
+    <div class="exp-completa-header">
+      <h2 class="section-title">Experiência visual <em>completa</em></h2>
+      <p class="exp-completa-subtitle">Conforto e desempenho visual começam aqui. Tecnologia, cuidado e atenção em cada detalhe da sua visão.</p>
+    </div>
+
+    <div class="exp-grid">
+
+      <article class="exp-card" style="--d:0">
+        <div class="exp-card-float"><div class="exp-card-inner">
+          <div class="exp-card-front">
+            <div class="exp-card-front-img">
+              <img src="./images/avaliacao-refrativa-avancada.webp" alt="Avaliação Refrativa Avançada — Optoclínica" loading="lazy" decoding="async" />
+            </div>
+            <div class="exp-card-front-body">
+              <h3 class="exp-card-front-title">Avaliação Refrativa Avançada</h3>
+              <p class="exp-card-front-desc">Análise precisa do grau com técnicas clínicas que avaliam como sua visão realmente responde.</p>
+              <span class="exp-card-front-hint" aria-hidden="true"></span>
+            </div>
+          </div>
+          <div class="exp-card-back">
+            <h4 class="exp-card-back-title">Avaliação Refrativa Avançada</h4>
+            <p class="exp-card-back-text">Através da retinoscopia, avaliamos o reflexo e a sombra formados dentro da pupila com a incidência da luz. Isso permite identificar um grau aproximado com alta precisão, mesmo antes da resposta do paciente, auxiliando na definição do grau ideal com mais conforto visual.</p>
+          </div>
+        </div></div>
+      </article>
+
+      <article class="exp-card" style="--d:1">
+        <div class="exp-card-float"><div class="exp-card-inner">
+          <div class="exp-card-front">
+            <div class="exp-card-front-img">
+              <img src="./images/autorefrator.webp" alt="Autorrefração Digital — Optoclínica" loading="lazy" decoding="async" />
+            </div>
+            <div class="exp-card-front-body">
+              <h3 class="exp-card-front-title">Autorrefração Digital</h3>
+              <p class="exp-card-front-desc">Tecnologia computadorizada que realiza uma medição inicial do grau visual.</p>
+              <span class="exp-card-front-hint" aria-hidden="true"></span>
+            </div>
+          </div>
+          <div class="exp-card-back">
+            <h4 class="exp-card-back-title">Autorrefração Digital</h4>
+            <p class="exp-card-back-text">O autorrefrator projeta luzes dentro do olho e analisa como elas retornam após atravessar as estruturas oculares. Com isso, conseguimos uma estimativa automática do grau, servindo como ponto de partida para a avaliação refrativa completa.</p>
+          </div>
+        </div></div>
+      </article>
+
+      <article class="exp-card" style="--d:2">
+        <div class="exp-card-float"><div class="exp-card-inner">
+          <div class="exp-card-front">
+            <div class="exp-card-front-img">
+              <img src="./images/avaliacao-funcional-visao.webp" alt="Avaliação Funcional da Visão — Optoclínica" loading="lazy" decoding="async" />
+            </div>
+            <div class="exp-card-front-body">
+              <h3 class="exp-card-front-title">Avaliação Funcional da Visão</h3>
+              <p class="exp-card-front-desc">Investigação completa de como os olhos trabalham juntos no dia a dia.</p>
+              <span class="exp-card-front-hint" aria-hidden="true"></span>
+            </div>
+          </div>
+          <div class="exp-card-back">
+            <h4 class="exp-card-back-title">Avaliação Funcional da Visão</h4>
+            <p class="exp-card-back-text">Avalia coordenação ocular, foco, movimentação dos olhos, convergência e desempenho visual funcional. Esse exame ajuda a identificar alterações que podem causar cansaço visual, dificuldade de leitura, dores de cabeça e desconforto ao usar telas.</p>
+          </div>
+        </div></div>
+      </article>
+
+      <article class="exp-card" style="--d:3">
+        <div class="exp-card-float"><div class="exp-card-inner">
+          <div class="exp-card-front">
+            <div class="exp-card-front-img">
+              <img src="./images/estereopsia.webp" alt="Estereopsia — Optoclínica" loading="lazy" decoding="async" />
+            </div>
+            <div class="exp-card-front-body">
+              <h3 class="exp-card-front-title">Estereopsia</h3>
+              <p class="exp-card-front-desc">Avaliação da percepção de profundidade e visão tridimensional.</p>
+              <span class="exp-card-front-hint" aria-hidden="true"></span>
+            </div>
+          </div>
+          <div class="exp-card-back">
+            <h4 class="exp-card-back-title">Estereopsia</h4>
+            <p class="exp-card-back-text">Analisa a capacidade do cérebro de unir as imagens dos dois olhos para formar visão em profundidade. É importante para coordenação motora, percepção espacial e desempenho em atividades do dia a dia, como dirigir, praticar esportes e leitura.</p>
+          </div>
+        </div></div>
+      </article>
+
+      <article class="exp-card" style="--d:4">
+        <div class="exp-card-float"><div class="exp-card-inner">
+          <div class="exp-card-front">
+            <div class="exp-card-front-img">
+              <img src="./images/caixa-prova-2.webp" alt="Caixa de Prova — Optoclínica" loading="lazy" decoding="async" />
+            </div>
+            <div class="exp-card-front-body">
+              <h3 class="exp-card-front-title">Caixa de Prova</h3>
+              <p class="exp-card-front-desc">Simulação real do seu grau no momento da consulta.</p>
+              <span class="exp-card-front-hint" aria-hidden="true"></span>
+            </div>
+          </div>
+          <div class="exp-card-back">
+            <h4 class="exp-card-back-title">Caixa de Prova</h4>
+            <p class="exp-card-back-text">Montamos manualmente as lentes na caixa de prova para que você experimente como seus óculos irão ficar antes mesmo da fabricação. Isso permite ajustar nitidez, conforto e adaptação visual de forma muito mais personalizada.</p>
+          </div>
+        </div></div>
+      </article>
+
+      <article class="exp-card" style="--d:5">
+        <div class="exp-card-float"><div class="exp-card-inner">
+          <div class="exp-card-front">
+            <div class="exp-card-front-img">
+              <img src="./images/lampada-fenda.webp" alt="Biomicroscopia — Optoclínica" style="object-position: center 30%;" loading="lazy" decoding="async" />
+            </div>
+            <div class="exp-card-front-body">
+              <h3 class="exp-card-front-title">Biomicroscopia</h3>
+              <p class="exp-card-front-desc">Exame detalhado das estruturas externas e internas dos olhos.</p>
+              <span class="exp-card-front-hint" aria-hidden="true"></span>
+            </div>
+          </div>
+          <div class="exp-card-back">
+            <h4 class="exp-card-back-title">Biomicroscopia</h4>
+            <p class="exp-card-back-text">Utilizando o microscópio ocular, avaliamos córnea, conjuntiva, cristalino, pálpebras e outras estruturas oculares em alta ampliação. O exame auxilia na identificação de alterações oculares, irritações, inflamações e sinais importantes para a saúde visual.</p>
+          </div>
+        </div></div>
+      </article>
+
+      <article class="exp-card" style="--d:6">
+        <div class="exp-card-float"><div class="exp-card-inner">
+          <div class="exp-card-front">
+            <div class="exp-card-front-img">
+              <img src="./images/retinografo.webp" alt="Retinografia — Optoclínica" loading="lazy" decoding="async" />
+            </div>
+            <div class="exp-card-front-body">
+              <h3 class="exp-card-front-title">Retinografia</h3>
+              <p class="exp-card-front-desc">Captura de imagens digitais da retina e das estruturas internas do olho.</p>
+              <span class="exp-card-front-hint" aria-hidden="true"></span>
+            </div>
+          </div>
+          <div class="exp-card-back">
+            <h4 class="exp-card-back-title">Retinografia</h4>
+            <p class="exp-card-back-text">Permite registrar e acompanhar a saúde ocular através de imagens detalhadas do fundo do olho. Auxilia na observação de alterações relacionadas à retina, nervo óptico e vasos sanguíneos, além de possibilitar comparações futuras para acompanhamento visual.</p>
+          </div>
+        </div></div>
+      </article>
+
+      <article class="exp-card" style="--d:7">
+        <div class="exp-card-float"><div class="exp-card-inner">
+          <div class="exp-card-front">
+            <div class="exp-card-front-img">
+              <img src="./images/lentes-contato.webp" alt="Lentes de Contato Personalizadas — Optoclínica" style="object-position: center 20%;" loading="lazy" decoding="async" />
+            </div>
+            <div class="exp-card-front-body">
+              <h3 class="exp-card-front-title">Lentes de Contato Personalizadas</h3>
+              <p class="exp-card-front-desc">Avaliação individualizada para adaptação segura e confortável de lentes de contato.</p>
+              <span class="exp-card-front-hint" aria-hidden="true"></span>
+            </div>
+          </div>
+          <div class="exp-card-back">
+            <h4 class="exp-card-back-title">Lentes de Contato Personalizadas</h4>
+            <p class="exp-card-back-text">Analisamos curvatura da córnea, qualidade da lágrima, sensibilidade ocular e necessidades visuais para selecionar a lente mais adequada para cada paciente, priorizando conforto, saúde ocular e qualidade visual.</p>
+          </div>
+        </div></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── SOBRE A PROFISSIONAL — REFINED LIGHT OLIVE EDITORIAL ── -->
+<section id="profissional">
+
+  <!-- ╔════════════════════════════════════════════════════════════════╗
+       ║ ORIGINAL WAVE BACKUP START — prof-wave-top (HTML antigo)        ║
+       ║ Para reverter: descomente o bloco abaixo e comente o novo       ║
+       ║ ".org-wave--exp-prof" logo a seguir. Também descomente o CSS    ║
+       ║ ".prof-wave-top" marcado como "ORIGINAL WAVE BACKUP" no <style>.║
+       ╚════════════════════════════════════════════════════════════════╝
+  <div class="prof-wave-top" aria-hidden="true">
+    <svg viewBox="0 0 1440 170" preserveAspectRatio="none">
+      <path class="wave-shadow" d="M0,0 L0,96 C 160,148 320,154 480,124 C 640,94 800,52 980,62 C 1160,72 1300,98 1440,76 L1440,0 Z"/>
+      <path class="wave-main"   d="M0,0 L0,86 C 160,138 320,144 480,114 C 640,84 800,42 980,52 C 1160,62 1300,88 1440,66 L1440,0 Z"/>
+    </svg>
+  </div>
+       ORIGINAL WAVE BACKUP END
+       ──────────────────────────────────────────────────────────────── -->
+
+  <!-- NOVO — wave refinada: exp-completa (bege) → profissional (oliva)
+       Curva mais baixa, sombra suavizada, menos impacto visual -->
+  <div class="org-wave org-wave--exp-prof" aria-hidden="true">
+    <svg viewBox="0 0 1440 85" preserveAspectRatio="none">
+      <path class="wave-shadow" d="M0,0 L0,46 C 280,76 580,82 840,58 C 1080,36 1260,52 1440,42 L1440,0 Z"/>
+      <path class="wave-main"   d="M0,0 L0,42 C 280,72 580,78 840,54 C 1080,32 1260,48 1440,38 L1440,0 Z"/>
+    </svg>
+  </div>
+
+  <!-- Static organic blobs (no parallax) -->
+  <span class="prof-blob b1"></span>
+  <span class="prof-blob b2"></span>
+  <span class="prof-blob b3"></span>
+
+  <div class="prof-inner">
+
+    <!-- TEXT — left -->
+    <div class="prof-text">
+      <div class="prof-eyebrow prof-reveal d1">
+        <span class="prof-eyebrow-dot"></span>
+        Sobre a Profissional
+      </div>
+      <h2 class="prof-name prof-reveal d2">Thatiany <em>Menezes</em></h2>
+      <p class="prof-role prof-reveal d3">Optometrista &amp; Fundadora da Optoclínica</p>
+
+      <div class="prof-bio">
+        <p class="prof-bio-opening prof-reveal d4">A visão é o que me move, e cuido dela desde sempre.</p>
+        <p class="prof-reveal d5">Cresci dentro de uma ótica. Por 10 anos trabalhei ao lado do meu pai, que está no ramo óptico há mais de 40 anos. Nesse tempo, passei pelo curso técnico de Óptica e Optometria e aprendi na prática o que só o dia a dia ensina: qual índice de refração faz sentido para cada grau, qual lente realmente vai funcionar para aquele paciente, quais detalhes fazem a diferença entre um óculos que funciona e um que fica na gaveta.</p>
+        <p class="prof-reveal d5">Em 2024, concluí minha graduação em Optometria. Com o estágio clínico em Piabetá e toda essa bagagem, ficou claro o que eu queria construir: a Optoclínica, onde técnica e cuidado andam juntos.</p>
+        <p class="prof-reveal d6">Aqui você não recebe só uma receita. Recebe um exame preciso, uma indicação pensada para seus olhos e o seu estilo de vida, e um profissional que não para de estudar.</p>
+        <p class="prof-reveal d6">Cursos, pós-graduação, atualizações constantes: porque saúde visual evolui, e o que ofereço a você precisa acompanhar. Atendimento sem pressa. Tecnologia atual. E dedicação de verdade.</p>
+      </div>
+    </div>
+
+    <!-- PHOTO — arch backdrop only -->
+    <div class="prof-photo">
+      <div class="prof-photo-backdrop" aria-hidden="true"></div>
+      <img
+        src="./images/thatiany-profissional.webp"
+        alt="Thatiany Menezes — Optometrista, fundadora da Optoclínica em Niterói"
+        class="prof-photo-img"
+        loading="lazy"
+      />
+    </div>
+
+  </div>
+</section>
+
+<!-- ── DEPOIMENTOS — EDITORIAL PULL QUOTE LAYOUT ── -->
+<section id="depoimentos">
+  <!-- NOVO — wave: profissional (oliva) → depoimentos (bege) — verde descendo no bege -->
+  <div class="org-wave org-wave--prof-dep" aria-hidden="true">
+    <svg viewBox="0 0 1440 78" preserveAspectRatio="none">
+      <path d="M0,0 L0,40 C 280,72 580,78 860,56 C 1080,38 1280,52 1440,44 L1440,0 Z"/>
+    </svg>
+  </div>
+  <!-- Oversized italic quotation marks as background art -->
+  <span class="dep-deco-quote dep-deco-1" aria-hidden="true">"</span>
+  <span class="dep-deco-quote dep-deco-2" aria-hidden="true">"</span>
+
+  <div class="container">
+    <!-- Header -->
+    <div class="dep-header reveal">
+      <span class="dep-eyebrow">Avaliações Reais no Google</span>
+      <h2 class="dep-title">Olhares que a Optoclínica<br /><em>transformou</em></h2>
+
+      <!-- Refined rating panel -->
+      <div class="dep-rating-panel">
+        <svg class="dep-rating-google" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="Google">
+          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+        </svg>
+        <div class="dep-rating-stat">
+          <span class="dep-rating-number">5.0</span>
+          <span class="dep-rating-stars">★★★★★</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ★ FEATURED PULL QUOTE — editorial centerpiece -->
+    <article class="dep-featured reveal">
+      <div class="dep-featured-mark" aria-hidden="true">"</div>
+      <blockquote class="dep-featured-quote">
+        Em toda minha vida, aos 75 anos, nunca tinha sido examinado como fui na Optoclínica. É notória a dedicação e o amor pela profissão. Vou sempre indicá-la a todos.
+      </blockquote>
+      <div class="dep-featured-footer">
+        <div class="dep-featured-author">
+          <div class="dep-featured-avatar" aria-hidden="true">CQ</div>
+          <div class="dep-featured-info">
+            <span class="dep-featured-name">Carlos Quintas Conde</span>
+            <span class="dep-featured-meta">há 5 dias · Avaliação no Google</span>
+          </div>
+        </div>
+        <div class="dep-featured-stars" aria-label="5 estrelas">★★★★★</div>
+      </div>
+    </article>
+
+    <!-- Supporting grid — 2 elegant cards -->
+    <div class="dep-grid">
+      <article class="dep-card reveal reveal-delay-1">
+        <div class="dep-card-stars" aria-label="5 estrelas">★★★★★</div>
+        <p class="dep-card-text">Consultório lindo, Dra super paciente e atenciosa. Ela testa várias coisas para ter de fato o seu grau certinho. Eu amei a minha experiência lá.</p>
+        <div class="dep-card-footer">
+          <div class="dep-card-author">
+            <span class="dep-card-name">Jaqueline Martins</span>
+            <span class="dep-card-date">há 3 dias · Google</span>
+          </div>
+          <svg class="dep-card-google" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="Google">
+            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+          </svg>
+        </div>
+      </article>
+
+      <article class="dep-card reveal reveal-delay-2">
+        <div class="dep-card-stars" aria-label="5 estrelas">★★★★★</div>
+        <p class="dep-card-text">Amei o atendimento, profissionais excelentes. Meu filho é autista e foi muito bem atendido com carinho e sem pressa. Super recomendo!</p>
+        <div class="dep-card-footer">
+          <div class="dep-card-author">
+            <span class="dep-card-name">Deise Costa</span>
+            <span class="dep-card-date">há 2 dias · Google</span>
+          </div>
+          <svg class="dep-card-google" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="Google">
+            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+          </svg>
+        </div>
+      </article>
+    </div>
+
+    <!-- CTA -->
+    <div class="dep-cta reveal">
+      <p class="dep-cta-text">Mais de 118 olhares que confiaram na nossa atenção e cuidado.</p>
+      <a href="https://www.google.com/search?q=Optocl%C3%ADnica+Niter%C3%B3i+reviews" target="_blank" class="dep-cta-btn">
+        Ver todas no Google
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14m-4-4 4 4-4 4"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── SOBRE A PROFISSIONAL ── -->
+
+
+<!-- ── FAQ ── -->
+<section id="faq">
+  <!-- NOVO — wave: depoimentos (bege) → faq (sage-bege) — quase imperceptível -->
+  <div class="org-wave org-wave--dep-faq" aria-hidden="true">
+    <svg viewBox="0 0 1440 52" preserveAspectRatio="none">
+      <path d="M0,0 L0,22 C 360,36 720,16 1080,28 C 1260,34 1380,30 1440,26 L1440,0 Z"/>
+    </svg>
+  </div>
+  <div class="container">
+
+    <div class="faq-header reveal">
+      <span class="faq-eyebrow">Dúvidas Frequentes</span>
+      <h2 class="faq-title">Perguntas <em>e respostas</em></h2>
+      <p class="faq-subtitle">Reunimos as principais dúvidas sobre nossos serviços, consultas e cuidados com a saúde ocular.</p>
+    </div>
+
+    <div class="faq-list reveal">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="faq-q-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="4" width="12" height="17" rx="2"/>
+              <path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1"/>
+              <path d="M9 13l2 2 4-4"/>
+            </svg>
+          </span>
+          <span class="faq-q-text">Qual a diferença da consulta na Optoclínica?</span>
+          <span class="faq-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Na Optoclínica, a consulta vai muito além do grau. Realizamos uma avaliação completa do sistema visual, incluindo testes de visão binocular, percepção de profundidade (visão 3D), saúde ocular e funcionamento visual como um todo.</p>
+          <p>O atendimento é individualizado, sem pressa e com explicações detalhadas em cada etapa da consulta.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="faq-q-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+          </span>
+          <span class="faq-q-text">O exame inclui avaliação da saúde ocular?</span>
+          <span class="faq-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Sim. Durante a consulta realizamos avaliação da saúde ocular através da biomicroscopia com lâmpada de fenda e da fundoscopia, permitindo observar diferentes estruturas dos olhos e identificar possíveis alterações oculares de forma precoce.</p>
+          <p>Quando necessário, também utilizamos retinografia digital para documentação e acompanhamento visual.</p>
+          <p>Caso seja identificada alguma alteração que necessite investigação ou tratamento médico, o paciente é encaminhado ao médico especialista da área para avaliação complementar.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="faq-q-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+              <line x1="9" y1="9" x2="9.01" y2="9"/>
+              <line x1="15" y1="9" x2="15.01" y2="9"/>
+            </svg>
+          </span>
+          <span class="faq-q-text">Crianças podem realizar a consulta?</span>
+          <span class="faq-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Sim! Realizamos avaliação visual infantil a partir dos 6 anos de idade. A detecção precoce de alterações visuais é fundamental para o desenvolvimento saudável da criança, especialmente no desempenho e aprendizado escolar.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="faq-q-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11 17l2 2a1 1 0 0 0 1.41 0l4-4a2 2 0 0 0 0-2.83l-2.59-2.58a2 2 0 0 0-2.83 0L9 13"/>
+              <path d="M13 7l-2-2a1 1 0 0 0-1.41 0l-4 4a2 2 0 0 0 0 2.83l2.59 2.58a2 2 0 0 0 2.83 0L15 11"/>
+            </svg>
+          </span>
+          <span class="faq-q-text">Vocês aceitam convênio?</span>
+          <span class="faq-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a">
+          <p>No momento, atendemos apenas por consulta particular. Entre em contato pelo WhatsApp para verificar valores e formas de pagamento disponíveis.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="faq-q-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="9" y1="13" x2="15" y2="13"/>
+              <line x1="9" y1="17" x2="13" y2="17"/>
+            </svg>
+          </span>
+          <span class="faq-q-text">Posso levar exames e receitas antigas?</span>
+          <span class="faq-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Sim, e isso ajuda muito! Ter seu histórico visual permite comparar evoluções e identificar tendências ao longo do tempo. Traga exames, receitas e laudos anteriores para uma análise mais completa.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="faq-q-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="11" cy="11" r="7"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              <line x1="11" y1="8" x2="11" y2="14"/>
+              <line x1="8" y1="11" x2="14" y2="11"/>
+            </svg>
+          </span>
+          <span class="faq-q-text">O exame pode identificar alterações oculares?</span>
+          <span class="faq-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Sim. A avaliação inclui exames capazes de identificar sinais e alterações oculares que podem estar relacionados a condições como glaucoma, catarata, degeneração macular, entre outras.</p>
+          <p>Quando necessário, o paciente é encaminhado ao médico especialista para investigação e acompanhamento adequado.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="faq-q-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="9"/>
+              <polyline points="12 7 12 12 15 14"/>
+            </svg>
+          </span>
+          <span class="faq-q-text">O grau sai na hora?</span>
+          <span class="faq-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Sim! A prescrição é gerada ao final da consulta. Você já sai com o receituário em mãos, podendo solicitar seus óculos ou lentes de contato na ótica de sua preferência.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="faq-q-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="7" cy="15" r="4"/>
+              <circle cx="17" cy="15" r="4"/>
+              <path d="M11 15h2"/>
+              <path d="M3 12l2-6h3"/>
+              <path d="M21 12l-2-6h-3"/>
+            </svg>
+          </span>
+          <span class="faq-q-text">Como funciona a caixa de prova?</span>
+          <span class="faq-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a">
+          <p>A caixa de prova permite simular o grau prescrito antes da confecção dos óculos. Assim, você consegue experimentar e validar sua visão na prática, trazendo mais segurança, conforto visual e menos chances de adaptação ruim com os novos óculos.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="./images/logo.svg" alt="Optoclínica" />
+        <p>Cuidado visual moderno, humano e de alta qualidade. Transformando vidas através da visão em Piratininga, Niterói/RJ.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/optoclinicaniteroi" target="_blank" title="Instagram" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="https://wa.me/5521992919886" target="_blank" title="WhatsApp" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#exp-completa">Experiência</a></li>
+          <li><a href="#profissional">Profissional</a></li>
+          <li><a href="#depoimentos">Depoimentos</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-contact">
+        <h4>Contato</h4>
+        <p>Est. Francisco da Cruz Nunes, 836<br />Loja 123 – Piratininga<br />Niterói/RJ · CEP 24350-310</p>
+        <br />
+        <p><a href="tel:+5521992919886">(21) 99291-9886</a></p>
+        <p><a href="mailto:optoclinicaniteroi@gmail.com">optoclinicaniteroi@gmail.com</a></p>
+        <br />
+        <p>@optoclinicaniteroi</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 Optoclínica · Todos os direitos reservados</p>
+      <p>CBO – Conselho Brasileiro de Optometria</p>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  // ── NAV SCROLL ──
+  const nav = document.getElementById('mainNav');
+  const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+  const sections = document.querySelectorAll('section[id]');
+
+  function updateActiveNav() {
+    const scrollY = window.scrollY;
+    nav.classList.toggle('scrolled', scrollY > 60);
+    // Active nav link — pick the section most centered in the viewport
+    let current = '';
+    const offset = window.innerHeight * 0.35;
+    sections.forEach(s => {
+      if (scrollY >= s.offsetTop - offset) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  }
+  window.addEventListener('scroll', updateActiveNav, { passive: true });
+  updateActiveNav();
+
+  // ── MOBILE MENU ──
+  const mobileMenu = document.getElementById('mobileMenu');
+  const navHamburger = document.getElementById('navHamburger');
+  navHamburger.addEventListener('click', () => {
+    mobileMenu.style.removeProperty('display'); // clear inline display:none (first open only)
+    mobileMenu.classList.add('open');
+    navHamburger.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+  document.getElementById('mobileClose').addEventListener('click', closeMobile);
+  function closeMobile() {
+    mobileMenu.classList.remove('open');
+    navHamburger.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // ── SCROLL REVEAL ──
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // ── EXP CARDS — CINEMATIC REVEAL (todos os 8 juntos) ──
+  const expGrid = document.querySelector('.exp-grid');
+  if (expGrid) {
+    const expCardObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          document.querySelectorAll('.exp-card').forEach(card => card.classList.add('in-view'));
+          expCardObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.05, rootMargin: '0px 0px 0px 0px' });
+    expCardObserver.observe(expGrid);
+  }
+
+  // ── EXP SECTION — SUBTLE PARALLAX ON BACKGROUND SHAPES ──
+  const expSection = document.getElementById('exp-completa');
+  if (expSection) {
+    const shapes = expSection.querySelectorAll('.exp-bg-shape');
+    let rafId = null;
+    expSection.addEventListener('mousemove', (e) => {
+      if (rafId) return;
+      rafId = requestAnimationFrame(() => {
+        const rect = expSection.getBoundingClientRect();
+        const cx = (e.clientX - rect.left) / rect.width - 0.5;
+        const cy = (e.clientY - rect.top)  / rect.height - 0.5;
+        shapes.forEach(s => {
+          const depth = parseFloat(s.dataset.depth) || 0.018;
+          const tx = cx * window.innerWidth * depth;
+          const ty = cy * window.innerHeight * depth;
+          s.style.transform = `translate3d(${tx}px, ${ty}px, 0)`;
+        });
+        rafId = null;
+      });
+    }, { passive: true });
+    expSection.addEventListener('mouseleave', () => {
+      shapes.forEach(s => { s.style.transform = ''; });
+    });
+  }
+
+  // ── HERO — BINOCULAR DEPTH (subtle 3-layer parallax via CSS variables) ──
+  const heroSection = document.getElementById('hero');
+  const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+  if (heroSection && !isTouchDevice) {
+    let heroRAF = null;
+    heroSection.addEventListener('mousemove', (e) => {
+      if (heroRAF) return;
+      heroRAF = requestAnimationFrame(() => {
+        const rect = heroSection.getBoundingClientRect();
+        const cx = (e.clientX - rect.left) / rect.width - 0.5;
+        const cy = (e.clientY - rect.top)  / rect.height - 0.5;
+        heroSection.style.setProperty('--depth-x', cx.toFixed(3));
+        heroSection.style.setProperty('--depth-y', cy.toFixed(3));
+        heroRAF = null;
+      });
+    }, { passive: true });
+    heroSection.addEventListener('mouseleave', () => {
+      heroSection.style.setProperty('--depth-x', 0);
+      heroSection.style.setProperty('--depth-y', 0);
+    });
+  }
+
+  // ── PROFISSIONAL — REVEAL ON SCROLL (premium fade + blur) ──
+  const profRevealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in-view');
+        profRevealObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.18, rootMargin: '0px 0px -80px 0px' });
+  document.querySelectorAll('#profissional .prof-reveal').forEach(el => profRevealObserver.observe(el));
+
+  /* Parallax disabled — section is intentionally static for elegance */
+
+  // ── EXP CARDS — TAP TO FLIP ON TOUCH DEVICES ──
+  const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+  if (isTouch) {
+    document.querySelectorAll('.exp-card').forEach(card => {
+      card.addEventListener('click', () => {
+        // Close all others
+        document.querySelectorAll('.exp-card.is-flipped').forEach(c => {
+          if (c !== card) c.classList.remove('is-flipped');
+        });
+        card.classList.toggle('is-flipped');
+      });
+    });
+  }
+
+  // ── FAQ ACCORDION ──
+  function toggleFaq(btn) {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('is-open');
+    document.querySelectorAll('.faq-item.is-open').forEach(el => {
+      el.classList.remove('is-open');
+      const q = el.querySelector('.faq-q');
+      if (q) q.setAttribute('aria-expanded', 'false');
+    });
+    if (!isOpen) {
+      item.classList.add('is-open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  }
+
+  /* Hero portrait now uses pure CSS float — no scroll parallax JS needed */
+</script>
+</body>
+</html>
