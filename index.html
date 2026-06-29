@@ -782,13 +782,13 @@
     /* Hero (dark olive) → Exp-completa (beige) — quase reta, ondulação levíssima */
     .org-wave--hero-exp { height: 38px; }
     .org-wave--hero-exp path { fill: #404c32; }
-    /* Exp-completa (beige) → Profissional (olive) — refinada e baixa */
-    .org-wave--exp-prof { height: 52px; }
+    /* Exp-completa (beige) → Profissional (olive) — onda marcada e elegante */
+    .org-wave--exp-prof { height: 120px; }
     .org-wave--exp-prof .wave-main { fill: var(--bg); }
     .org-wave--exp-prof .wave-shadow {
       fill: var(--bg);
-      opacity: 0.18;
-      filter: blur(1.2px);
+      opacity: 0.26;
+      filter: blur(3px);
     }
     /* Profissional (olive) → Depoimentos (beige) — verde descendo suave */
     .org-wave--prof-dep { height: 46px; }
@@ -805,7 +805,7 @@
     /* Responsivo: encolhe alturas em telas pequenas, mantém proporção */
     @media (max-width: 768px) {
       .org-wave--hero-exp { height: 26px; }
-      .org-wave--exp-prof { height: 36px; }
+      .org-wave--exp-prof { height: 68px; }
       .org-wave--prof-dep { height: 32px; }
       .org-wave--dep-faq { height: 22px; }
       #exp-completa { padding-top: 92px; }
@@ -850,7 +850,7 @@
     .prof-inner {
       position: relative;
       z-index: 4;
-      padding: 14px 60px 14px;
+      padding: 120px 60px 110px;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 60px;
@@ -920,7 +920,7 @@
     /* ── BIO OPENING LINE ── */
     .prof-bio-opening {
       font-family: var(--font-sans);
-      font-size: 15px;
+      font-size: 18px;
       font-weight: 500;
       font-style: normal;
       color: rgba(255,255,255,0.95);
@@ -933,7 +933,7 @@
 
     /* Bio — refined, airy */
     .prof-bio p {
-      font-size: 14.5px;
+      font-size: 17px;
       font-weight: 400;
       line-height: 1.88;
       color: rgba(255,255,255,0.82);
@@ -2215,7 +2215,7 @@
       .prof-inner {
         grid-template-columns: 1fr;
         gap: 40px;
-        padding: 60px 28px 60px;
+        padding: 90px 28px 80px;
       }
       .prof-text { order: 2; text-align: center; }
       .prof-text .prof-eyebrow,
@@ -2531,9 +2531,9 @@
   <!-- NOVO — wave refinada: exp-completa (bege) → profissional (oliva)
        Curva mais baixa, sombra suavizada, menos impacto visual -->
   <div class="org-wave org-wave--exp-prof" aria-hidden="true">
-    <svg viewBox="0 0 1440 85" preserveAspectRatio="none">
-      <path class="wave-shadow" d="M0,0 L0,46 C 280,76 580,82 840,58 C 1080,36 1260,52 1440,42 L1440,0 Z"/>
-      <path class="wave-main"   d="M0,0 L0,42 C 280,72 580,78 840,54 C 1080,32 1260,48 1440,38 L1440,0 Z"/>
+    <svg viewBox="0 0 1440 140" preserveAspectRatio="none">
+      <path class="wave-shadow" d="M0,0 L0,70 C 240,140 480,5 720,70 C 960,135 1200,10 1440,65 L1440,0 Z"/>
+      <path class="wave-main"   d="M0,0 L0,65 C 240,135 480,0 720,65 C 960,130 1200,5 1440,60 L1440,0 Z"/>
     </svg>
   </div>
 
@@ -2554,11 +2554,11 @@
       <p class="prof-role prof-reveal d3">Optometrista &amp; Fundadora da Optoclínica</p>
 
       <div class="prof-bio">
-        <p class="prof-bio-opening prof-reveal d4">A visão é o que me move, e cuido dela desde sempre.</p>
-        <p class="prof-reveal d5">Cresci dentro de uma ótica. Por 10 anos trabalhei ao lado do meu pai, que está no ramo óptico há mais de 40 anos. Nesse tempo, passei pelo curso técnico de Óptica e Optometria e aprendi na prática o que só o dia a dia ensina: qual índice de refração faz sentido para cada grau, qual lente realmente vai funcionar para aquele paciente, quais detalhes fazem a diferença entre um óculos que funciona e um que fica na gaveta.</p>
-        <p class="prof-reveal d5">Em 2024, concluí minha graduação em Optometria. Com o estágio clínico em Piabetá e toda essa bagagem, ficou claro o que eu queria construir: a Optoclínica, onde técnica e cuidado andam juntos.</p>
-        <p class="prof-reveal d6">Aqui você não recebe só uma receita. Recebe um exame preciso, uma indicação pensada para seus olhos e o seu estilo de vida, e um profissional que não para de estudar.</p>
-        <p class="prof-reveal d6">Cursos, pós-graduação, atualizações constantes: porque saúde visual evolui, e o que ofereço a você precisa acompanhar. Atendimento sem pressa. Tecnologia atual. E dedicação de verdade.</p>
+        <p class="prof-bio-opening prof-reveal d4">Cresci dentro de uma ótica. Aprendi que óculos bom não fica na gaveta.</p>
+        <p class="prof-reveal d5">Cresci dentro de uma ótica, literalmente. Por 10 anos trabalhei ao lado do meu pai, que está nesse ramo há mais de 40 anos. Fiz o curso técnico, mas o que mais aprendi foi na prática: qual lente vai funcionar de verdade para aquele paciente, e o que separa um óculos que muda a vida de um que fica esquecido na gaveta.</p>
+        <p class="prof-reveal d5">Em 2024, concluí minha graduação em Optometria com estágio clínico em Piabetá. Toda essa bagagem apontava para uma direção só: criar a Optoclínica. Um lugar onde técnica e cuidado não precisam escolher entre si.</p>
+        <p class="prof-reveal d6">Aqui você não sai só com uma receita.<br><br>Você sai com um exame feito com atenção real, uma indicação pensada para os seus olhos e o seu estilo de vida, e a certeza de que a profissional que te atendeu continua estudando depois que você foi embora.</p>
+        <p class="prof-reveal d6">Saúde visual evolui: novos estudos, novas evidências, novas tecnologias. Me manter atualizada não é diferencial, é obrigação. Por isso aqui você encontra atendimento sem pressa, tecnologia atual e uma profissional que leva esse compromisso a sério.</p>
       </div>
     </div>
 
